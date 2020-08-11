@@ -1,0 +1,23 @@
+body {
+    background-color: #d8b9c3;
+    /* color: #363062; */
+}
+
+hr {
+    height: 1px;
+    background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #363062;
+}
+
+a {
+    text-decoration: none;
+    color: #363062;
+}
+
+.titlerow 
+{
+    background-color:#827397; text-align: center;
+}

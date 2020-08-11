@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 css</title>
+
+    <style>
+        .center {
+            /* 텍스트 정렬 */
+            text-align: center; 
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .justify
+        {
+            text-align: justify;
+        }
+
+        .container {
+            padding: 10px;
+            width: 30%;
+            border: 3px solid pink;
+        }
+
+        .container h1
+        {
+            /* 텍스트 꾸밈 */
+            text-decoration: underline;
+
+            /* 텍스트 그림자 */
+            text-shadow: 5px 5px 10px skyblue;
+        }
+
+        .container p 
+        {
+            /* 텍스트 들여쓰기 */
+            text-indent: 3em;
+            line-height: 2em;
+
+            text-decoration: line-through firebrick; 
+            /* dotted나 wavy도 됨 */
+            /*자간 */
+            letter-spacing: 0.2rem;
+        }
+
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1 class="center">제목 1</h1>
+    <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, cum? Id quas dolores natus hic
+        dolor alias cumque non sit.</p>
+
+    <h1 class="left">제목 2</h1>
+    <p class="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, cum? Id quas dolores natus hic
+        dolor alias cumque non sit.</p>
+
+    <h1 class="right">제목 3</h1>
+    <p class="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, cum? Id quas dolores natus hic
+        dolor alias cumque non sit.</p>
+    <div class="container">
+        <h1 class="justify">제목 3</h1>
+        <p class="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, cum? Id quas dolores natus
+            hic dolor alias cumque non sit.</p>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+--조인
+
+--동등조인
+--네추럴 조인: ON(기본키=외래키다)이 생략 가능. 동일한 열이 있으면 join
+--네추럴 조인은 다른 테이블에 동들한 열이 2개 이상 있을 때 원하는 조인을 할 수 없다.
+SELECT employee_id, first_name, 
+       job_id, job_title
+FROM employees 
+NATURAL JOIN jobs;
+--이 경우 두 테이블에서 job_id가 같음.
+
+
+--동등 조인(ON 을 사용한 JOIN 기본)
+SELECT e.employee_id, e.last_name,
+       d.department_id, d.department_name
+FROM employees e
+JOIN departments d
+    ON e.department_id = d.department_id; 
+            --employees테이블의 department_id 와, departments 테이블의 그것이 같다고 표시.
+            --하나가 기본키, 하나가 외래키임.
+    
+    
+    
+--WHERE절 추가
+--ON 이후(JOIN이 끝나고)에 위치함
+SELECT e.employee_id, e.last_name,
+       d.department_id, d.department_name
+FROM employees e
+JOIN departments d
+    ON e.department_id = d.department_id
+WHERE d.department_id = 50 AND e.salary > 5000;   
+
+--3개의 테이블 조인
+SELECT e.employee_id, l.city, d.department_name
+FROM employees e
+JOIN departments d
+    ON e.department_id = d.department_id
+JOIN locations l
+    ON d.location_id = l.location_id;
+    
+--부서명(department_name) , 시티명(city), 국가명(country_name)을 나타내는 테이블을 출력합니다. 
+--테이블들은 countries 와 departments와 locations를 조인 합니다. 
+--조건은, 시티가 'Seattle' 혹은 'London' 이어야 하고 국가명은 앞쪽에 'United' 가 들어가야 합니다.
+SELECT 
+d.department_name AS 부서명, 
+l.city AS 도시명, 
+c.country_name AS 국가명
+FROM countries c
+JOIN locations l
+    ON c.country_id = l.country_id
+JOIN departments d
+    ON d.location_id = l.location_id
+WHERE l.city IN ('Seattle', 'London') AND c.country_name LIKE 'United%';
+    
+
+
+--비동등 조인
+--동등조인(등가 조인)방식에 비해 자주 사용하는 방식은 아님.
+--특정 열이 일치하진 않음(비동등, 비등가)
+
+
+
+
+
+--자체 조인
+SELECT 
+e.last_name AS 직원이름,
+m.last_name AS 매니저이름
+FROM employees e
+JOIN employees m
+    ON e.manager_id = m.employee_id;
+
+--regions 테이블과 countries 테이블 조인
+SELECT r.region_id, r.region_name,
+       c.country_id, c.country_name
+FROM Regions r
+JOIN countries c
+    ON c.region_id= r.region_id; 
+
+    
+    
+ ----------------------
+ --외부 조인(outer join)
+ --조건에 일치하지 않는 데이터까지 모두 출력
+ --부족한 데이터는 NULL값으로 설정됨.
+ 
+ --LEFT 왼쪽 테이블의 데이터가 모두 검색에 포함.
+SELECT 
+e.last_name AS 직원,
+e.department_id AS 부서번호,
+d.department_name AS 부서명
+FROM employees e --먼저 나오는게 왼쪽
+LEFT JOIN departments d  
+    ON e.department_id = d.department_id;
+ 
+--RIGHT -- 오른쪽 테이블의 모든 데이터가 검색에 포함
+SELECT 
+e.last_name AS 직원,
+e.department_id AS 부서번호,
+d.department_name AS 부서명
+FROM employees e 
+RIGHT JOIN departments d  
+    ON e.department_id = d.department_id;
+    
+--FULL --양쪽 테이블 모든 값이 출력됨
+SELECT 
+e.last_name AS 직원,
+e.department_id AS 부서번호,
+d.department_name AS 부서명
+FROM employees e 
+FULL JOIN departments d  
+    ON e.department_id = d.department_id;
+ 
+ 
+ 
+--예제) countries , locations 테이블을 조인하여 아래와 같이 출력하시오.
+--(지역번호로 DESC 정렬)
+--country_name 국가, country_id 국가번호, location_id 지역번호, city 도시
+
+SELECT
+c.country_name AS 국가,
+c.country_id AS 국가번호,
+l.location_id AS 지역번호,
+l.city AS 도시
+FROM COUNTRIES c
+LEFT JOIN LOCATIONS l
+    ON c.country_id = l.country_id
+ORDER BY l.location_id DESC;    
+ 
+ 
+ 
+ --CROSS JOIN 교차 조인, 상호 조인. 카티션 곱(Cartesion product)
+ --한쪽 테이블의 모든 해과 다른 테이블의 모든 행을 연결. 두 테이블의 행의 개수를 곱한 수가 됨.
+ --ON절이 따로 없음.
+ 
+ --예제 ) countries , regions 테이블을 크로스 조인하여 
+--각각의 테이블의     25행 X 4행 => 100행의 결과가 나오도록 하세요(country_name, region_name)
+ SELECT 
+c.country_name AS 국가,
+r.region_name As 지역이름
+ FROM countries c
+ CROSS JOIN regions r;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+SELECT *
+FROM employees;
+
+SELECT *
+FROM locations;
+
+SELECT *
+FROM countries;
+SELECT *
+FROM departments;

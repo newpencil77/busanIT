@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #ffeead;
+            ;
+            margin: 10px;
+        }
+
+        .container div {
+            padding: 10px;
+            text-align: center;
+            font-size: 2em;
+            color: #ffeead;
+            /* 최소한의 크기 */
+            min-width: 200px;
+        }
+
+        .home {
+            background-color: #96ceb4;
+            /* margin-right: auto; */
+            flex: 1;
+            order: 2;
+        }
+
+        .serach {
+            background-color: #ff6f69;
+            flex: 1;
+            order: 3;
+        }
+
+        .logout {
+            background-color: skyblue;
+            flex: 1;
+            order: 1;
+        }
+
+        .container {
+            border: 5px solid #ffcc5c;
+            display: flex;
+            justify-content: flex-end;
+            /* 화면 크기가 작아지면 저절로 컨텐츠가 내려감
+            기본이 nowrap */
+            flex-wrap: wrap;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <nav class="container">
+        <div class="home">home</div>
+        <div class="serach">Search</div>
+        <div class="logout">Logout</div>
+    </nav>
+
+
+</body>
+
+</html>

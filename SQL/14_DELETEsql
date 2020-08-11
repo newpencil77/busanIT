@@ -1,0 +1,61 @@
+--DML_DELETE 
+--WHERE가 없으면 테이블의 모든 행을 삭제함.
+--테이블을 삭제해도 테이블의 물리적인 구조는 변하지 않음(컬럼은 그대로 있음)
+
+--부서번호가 71~ 76인 행들 삭제
+DELETE FROM departments
+WHERE department_id BETWEEN 71 AND 76;
+commit;
+
+SELECT *
+FROM departments;
+
+--직원번호가 1, 2 삭제. 삭제
+DELETE FROM employees
+WHERE employee_id IN (1,2);
+commit;
+
+SELECT * 
+FROM employees;
+
+--전체 삭제
+DELETE FROM copy_emp;
+
+--TRUNCATE. DDL(데이터 제어어)에 속한 명령어. 전체 삭제인데 rollback이 안됨. 
+--데이터 및 저장공간을 삭제함.
+
+TRUNCATE TABLE copy_emp; --rollback해도 데이터가 없음
+
+--SAVEPOINT
+
+SELECT * FROM employees    ----1 salary값이 12008
+WHERE employee_id = 108;
+
+UPDATE employees          -----2 salary값이 12018
+SET salary = salary +10
+WHERE employee_id = 108;
+
+SAVEPOINT A; --세이브포인트 A 만듦
+
+UPDATE employees            
+SET salary = salary +20
+WHERE employee_id = 108;
+
+--세이브포인트로 돌아가기
+ROLLBACK TO SAVEPOINT A;  --그냥 롤백이 아니라 세이브포인트A로 롤백함. 그래서 salary값이 12018이 됨.
+ROLLBACK;                 --세이브 포인트 이전 상태로 복귀 롤백을 하면 salary값이 12008이 됨.
+/*
+오류 보고 ---한번 롤백하면 다시 세이브포인트로는 못가나? 오류남.
+ORA-01086: savepoint 'A' never established in this session or is invalid
+01086. 00000 -  "savepoint '%s' never established in this session or is invalid"
+*Cause:    An attempt was made to roll back to a savepoint that was never
+           established in this session, or was invalid.
+*Action:   Try rolling back to the savepoint from the session where it is established.
+*/-- 다시 세이브포인트를 만들어주면 되긴 하는데, 생성시점의 값으로 세이브포인트가 생겨남.
+
+
+
+rollback;
+
+SELECT *
+FROM copy_emp;

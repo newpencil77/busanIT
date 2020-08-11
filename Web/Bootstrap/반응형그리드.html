@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>부트스트랩 CDN 적용</title>
+    <!-- 부트스트랩 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <style>
+      .row div {
+        height: 5rem;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 컨테이너
+    <div class="container bg-info">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam unde possimus totam adipisci accusantium veritatis doloribus, voluptas eius soluta consequatur maxime perspiciatis neque error assumenda eaque quisquam ex laudantium illum.</p>
+    </div>
+
+    <div class="container-fluid bg-success">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quasi laboriosam magnam enim repellendus obcaecati nesciunt temporibus eius praesentium recusandae nulla nemo velit itaque quaerat, consequuntur dignissimos maiores perferendis numquam?</p>
+    </div> -->
+
+    <!-- 부트스트랩 그리드 시스템 -->
+    <!-- <div class="row">
+        <div class="col-sm-6 col-lg-4 bg-info">col-6</div>
+        <div class="col-sm-6 col-lg-4 bg-warning">col-6</div> -->
+    <!-- 벗어나면 밑으로 감 -->
+    <!-- <div class="col-sm-6 col-lg-4 bg-primary">col-6</div>  
+    </div> -->
+
+    <div class="row">
+      <div class="bg-info text-white text-center col-lg-6 col-md-2 col-sm-12">
+        Header
+      </div>
+      <div
+        class="bg-success text-white text-center col-lg-3 col-md-4 col-sm-12"
+      >
+        Content
+      </div>
+      <div class="bg-danger text-white text-center col-lg-2 col-md-6 col-sm-8">
+        Content2
+      </div>
+      <div class="bg-warning text-center col-lg-1 col-md-12 col-sm-4">Menu</div>
+    </div>
+
+    <!-- 부트스트랩 JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

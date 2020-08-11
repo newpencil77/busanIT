@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 예제</title>
+
+</head>
+
+<body>
+
+    <!-- 스크립트는 한 html문서 내에 여러개 사용 가능함 -->
+    <h3>배열 만들기</h3>
+    <script>
+        var students = ["홍길동", "김유신", "이순신"];
+        document.write(students + '<br>'); //document.write()는 태그도 입력 가능
+    </script>
+
+    <h3>강감찬 추가</h3>
+    <script>
+        students.push("강감찬");
+        document.write(students + '<br>'); 
+    </script>
+
+    <h3>강감찬 빼기</h3>
+    <script>
+    students.pop();
+    document.write(students + '<br>'); 
+    </script>
+
+    <h3>문익점 추가</h3>
+    <script>
+        students.unshift("문익점");
+        document.write(students + '<br>'); 
+    </script>
+
+<!-- 모든 자료형이 배열의 요소가 될 수 있음. 자료형이 섞여도 되고, 배열도 들어갈 수 있음. 요소의 자료형을 처음과 다른 것으로도 바꿀 수 있음 ex.'행수'를 숫자로 바꿀 수도 있음 -->
+    <h3>배열의 요소는?</h3>
+    <script>
+        var myArr = [1, 1.2, '펭수', true, [1, false, '행수']];
+    </script>
+
+<h3>배열에 인덱스 번호를 크게 입력했을 때</h3>
+<!--ex. 5개의 요소를 가진 배열의 50번 인덱스에 요소를 넣으면, 그 사이를 자동으로 빈 요소(undifined)로 채움. 배열 길이는 51이 됨. -->  -->
+
+    
+
+</body>
+</html>

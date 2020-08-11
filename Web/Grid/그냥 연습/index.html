@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+
+    <!-- 마우스 호버시 부드럽게 이미지를 변경할 수 있도록 -->
+
+
+
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .chairs {
+
+            /* padding: 20px; */
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(144, 150, 138);
+            text-align: center;
+
+        }
+
+        /* .mg10
+        {
+            padding:10px;
+        } */
+
+
+        .chairs .navi {
+            padding: 40px;
+        }
+
+        .chairs .navi h3 {
+            padding: 10px;
+        }
+
+        .chairs .navi a {
+            text-decoration: none;
+            color: black;
+            font-weight: 100;
+            font-size: 0.8rem;
+
+        }
+
+        .chairs .navi span {
+            border-right: 1px solid gray;
+            padding: 0px 10px;
+
+        }
+
+        .chairs .navi span:last-child {
+            border: none;
+        }
+
+         .chair {
+            display: grid;
+            width: 100%;
+            height: 50%;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            background-color: rgb(144, 150, 138);
+
+        }
+        
+        /* .chair:first-child
+        {
+            grid-column-end: -50px ;
+        } */
+        
+
+        
+        .chairitem
+        {
+            border-right: 1px solid gray;
+        }
+
+        .chairitem:nth-child(5n)
+        {
+            border: none;
+        }
+
+        /* .chair .vac */
+    
+
+
+        .chairimg 
+        {
+            width: inherit;
+        }
+
+        
+        .chairimg img
+        {
+            width: 80%;
+            background-color: white;
+        }
+
+        .chairtxt
+        {
+            /* width: 100%; */
+            width: inherit;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .chairtxt .chairname, .chairvariants
+        {
+            display: inline-block;
+            font-size: 0.8rem;
+        }
+
+
+
+
+
+
+
+/*
+        .chair .imgs {
+            display: grid;
+            width: 100%;
+            height: 50%;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            background-color: rgb(144, 150, 138);
+
+
+        }
+
+        .chairimg {
+            width: 100%;
+
+        }
+
+        .chairimg:nth-last-child() {
+            border: none;
+        }
+
+        .chairimg img {
+            width: 90%;
+            background-color: white;
+        } */
+    </style>
+
+</head>
+
+
+<body>
+
+    <section class="chairs">
+
+        <div class="container">
+
+            <div class="navi">
+                <h3>Have a seat</h3>
+                <h6>
+                    <span>
+                        <a href="#">DINING CHAIRS</a>
+                    </span>
+                    <span>
+                        <a href="#">OFFICE CHAIRS</a>
+                    </span>
+                    <span>
+                        <a href="#">OFFICE CHAIRS</a>
+                    </span>
+                    <span>
+                        <a href="#">LOUNGE CHAIRS</a>
+                    </span>
+                </h6>
+            </div>
+
+
+            <div class="chair">
+                
+                <div class="vac"></div>
+                
+                <div class="chairitem">
+                    <div class="chairimg">
+                        <img src="img/drawn1.png" onmouseover="this.src='img/drawn2.jpg'" onmouseout="this.src='img/drawn1.png'" alt="drawn">
+                    </div>
+                    <div class="chairtxt">
+                        <div>
+                            <h4 class="chairname">Drawn</h4>
+                            <p class="chairvariants">2 Variants</p>
+                        </div>
+                        <div class="madeby"></div>
+                    </div>
+                </div>
+                
+                
+                <div class="chairitem">
+                    <div class="chairimg"><img src="img/Elefy1.png" onmouseover="this.src='img/Elefy2.jpg'" onmouseout="this.src='img/Elefy1.png'" alt="elefy"></div>
+                    <div class="chairtxt">
+                        <div>
+                            
+                            <div class="chairname"></div>
+                            <div class="chairvariants"></div>
+                        </div>
+                        <div class="madeby"></div>
+                    </div>
+                </div>
+                
+                <div class="chairitem">
+                    <div class="chairimg"><img src="img/Betty1.png" onmouseover="this.src='img/Betty2.jpg'" onmouseout="this.src='img/Betty1.png'" alt="betty"></div>
+                    <div class="chairtxt">
+                        <div>
+                            
+                            <div class="chairname"></div>
+                            <div class="chairvariants"></div>
+                        </div>
+                        <div class="madeby"></div>
+                    </div>
+                </div>
+                
+                <div class="chairitem">
+                    <div class="chairimg"><img src="img/Little-Petra1.png" onmouseover="this.src='img/Little-Petra2.jpg'" onmouseout="this.src='img/Little-Petra1.png'" alt="littlepatra"></div>
+                    <div class="chairtxt">
+                        <div>
+                            
+                            <div class="chairname"></div>
+                            <div class="chairvariants"></div>
+                        </div>
+                        <div class="madeby"></div>
+                    </div>
+                </div>
+                
+                <div class="vac"></div>
+                
+                <!-- <div class="imgs">
+                    <div class="chairimg"><img src="img/drawn1.png" alt="drawnfront"></div>
+                    <div class="chairimg"><img src="img/Elefy1.png" alt="elefy1"></div>
+                    <div class="chairimg"><img src="img/Betty1.png" alt="betty1"></div>
+                    <div class="chairimg"><img src="img/Little-Petra1.png" alt="littlepatra1"></div>
+                </div>
+
+                <div class="chairtxt">
+                    <div class="product">
+
+                        <div class="chairname">
+                            <div></div>
+                        </div>
+                        <div class="chairvariants"></div>
+                    </div>
+                    <div class="madeby"></div>
+                </div> -->
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>

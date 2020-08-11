@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 문제</title>
+
+    <style>
+        #main {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+        }
+
+        #center {
+            position: relative;
+            left: 50px;
+            top: 50px;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+        div {
+            height: 50px;
+            width: 50px;
+        }
+
+        .blue {
+            background-color: lightblue;
+            position: absolute;
+        }
+
+        .green {
+            background-color: lightgreen;
+            position: absolute;
+            right: 0;
+        }
+
+        .yellow {
+            background-color: yellow;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .red {
+            background-color: lightpink;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main">
+        <div class="blue"></div>
+        <div class="green"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div id="center">
+            <div class="blue"></div>
+            <div class="green"></div>
+            <div class="yellow"></div>
+            <div class="red"></div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

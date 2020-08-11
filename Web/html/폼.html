@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h3>폼의 입력창에 라벨 붙이기</h3>
+
+    <!-- 라벨의 필요성? -->
+    <!-- 라벨부를 클릭하면 입력창이 선택됨. 체크를 하거나 체크를 해제 -->
+    <!-- for값과 id값이 같을 것 -->
+
+    <!-- fieldset 폼 요소 그룹 묶기-->
+    <!-- legend 태그를 넣으면 폼의 제목 지정 가능 -->
+    <form action="">
+        <fieldset>
+            <legend>폼의 제목</legend>
+            <label for="name">이 름:</label>
+            <input id="name" type="text">
+            <br>
+            <label for="email">이메일:</label>
+            <input id="email" type="email">
+            <br>
+            <label for="pass">비밀번호:</label>
+            <input id="pass" type="password">
+            <br>
+            <label for="color">색상:</label>
+            <input id="color" type="color">
+            <br>
+            <input type="submit" value="보내기">
+            <input type="reset" value="리셋">
+            <!-- 리셋을 넣으면 폼에 적은 값을 리셋시킴 -->
+        </fieldset>
+    </form>
+
+    <h3>폼 마스터</h3>
+    <form action="process.php">
+        <div>
+            <label for="name2">이름</label> <br>
+            <input type="text" id="name2" required>
+            <br>
+            <label for="email2">이메일</label> <br>
+            <input type="email2" autofocus id="email2" placeholder="이메일 입력">
+        </div>
+        <!-- textarea: 메시지 창 -->
+        <div>
+            <label for="message">메세지</label><br>
+            <textarea name="massage" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <!-- 셀렉트 -->
+        <div>
+            <label for="gender">성별</label> <br>
+            <select name="gender" id="gender">
+                <option value="male">남성</option>
+                <option value="female">여성</option>
+                <option value="other">other</option>
+            </select>
+        </div>
+       
+        <!-- 서버로 보내질 값에 이름을 붙인 것- name속성과 그 값  -->
+        <!-- 숫자 -->
+        <div>
+            <label for="age">나이</label>
+            <br>
+            <input type="number" id="age">
+        </div>
+        <!-- 날짜 -->
+        <div>
+            <label for="birthdate">생년월일</label>
+            <br>
+            <input type="date" id="birthdate">
+        </div>
+        <!-- 라디오 박스. 하나만 선택함 -->
+        <!-- 라디오박스는 네임이 다 같아야함 -->
+        <!-- 아이디는 항상 달라야함. 라벨 줄거면 따로 줌 -->
+        <div>
+            <label><input type="radio" name = "membership" id="simple" value="simple">심플</label>
+            <label><input type="radio" name = "membership" id="standard" value="standard">스탠다드</label>
+            <label><input type="radio" name = "membership" id="super" value="super" checked>슈퍼</label>
+        </div>
+
+        <!-- 체크박스는 다중 선택 가능 -->
+        <!-- 체크박스는 네임이 다 달라야함 -->
+        <div>
+            <label><input type="checkbox" name = "like" id="like1" value="apple">사과🍎</label>
+            <label><input type="checkbox" name = "like" id="like2" value="orrange">오렌지🍊</label>
+            <label><input type="checkbox" name = "like" id="like3" value="watermelon">수박🍉</label>
+        </div>
+
+        <!-- submit버튼과 reset버튼 -->
+        <input type="submit" value="보내기">
+        <button type="reset">리셋</button>
+
+
+<!-- autofocus: 페이지를 불러오자 마자 폼 요소에 마우스 커서 표시 -->
+<!-- placeholder 입력 란에 표시하는 힌트, 필드 클릭하면 사라짐 -->
+<!-- required 필수 필드 체크. 입력없이 서버로 submit하면 오류 메시지 -->
+<!-- minlength 최소글자 maxlength 최대 글자 size 화면에 몇 글자까지 보이게 할지 -->
+        <!-- submit 버튼을 여러개 만들고 각각 다른 곳으로 보내게 할 순 없나?-->
+
+    </form>
+    
+
+
+    <!-- 생년월일을 입력하면 관련 운세페이지로 옮겨가게하기? -->
+
+</body>
+
+</html>

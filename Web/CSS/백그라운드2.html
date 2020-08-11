@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백그라운드2</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+    }
+
+
+    .container {
+        height: 100vh;
+        /* viewport height */
+        /* background: url(서핑.jpg) no-repeat center center; */
+        background-image: url(sun.png), url(서핑.jpg);
+        background-repeat: no-repeat, no-repeat;
+        background-position: right top, center;
+
+        /* cover를 하면 전체화면에 맞게 들어감 */
+        background-size: 100px 100px, cover;
+
+        color: white;
+        text-align: center;
+
+
+    }
+
+    .container2 {
+        height: 100vh;
+        /* viewport height */
+        background: url(배경2.jpg) no-repeat center center;
+        /* cover를 하면 전체화면에 맞게 들어감 */
+
+        /*  -webkit- : 구글, 사파리 브라우저에 적용
+            -moz- : 파이어폭스 브라우저에 적용
+            -ms- : 익스플로러에 적용, 보통 생략합니다.
+            -o- : 오페라 브라우저에 적용 */
+        background-size: cover;
+        /* overflow: hidden; */
+        position: relative;
+        text-align: center;
+
+    }
+
+    .container3 {
+        height: 100vh;
+        background: linear-gradient(45deg, #ff0000, blue);
+        /* background: linear-gradient(to right, red, blue, yellow, orange); */
+
+
+        /* 부모태그에 display속성 flex를 줘야함 */
+        /* flex로 화면 중앙에 박스 배치 */
+        display: flex;
+
+        /* 가로로 가운데 */
+        justify-content: center;
+
+        /* 세로로 가운데 */
+        align-items: center;
+        text-align: center;
+
+    }
+
+    .center1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 3px solid white;
+        width: 600px;
+        height: 300px;
+        /* margin을 이용해 가운데 */
+        margin-top: -150px;
+        margin-left: -300px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
+        /* 주축을 바꾼다는 개념으로 생각하면 좀 더 편함 */
+        flex-direction: column;
+        
+    }
+
+
+    .center2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 3px solid white;
+        color: white;
+        width: 600px;
+        height: 300px;
+        /* trasform의 translate 속성을 이용해 가운데 */
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .center3 {
+        border: 3px solid white;
+        color: white;
+        width: 600px;
+        height: 300px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+
+    h1
+    {
+        margin: 0px;
+    }
+
+    p
+    {
+        margin: 0px;
+    }
+
+</style>
+
+
+<body>
+    <div class="container">
+        <div class="center1">
+            <div class="content1">
+                <h1>배경에 글자를 넣어봅니다</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro temporibus aliquid delectus illum quam
+                    totam sit nobis aspernatur harum amet?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="center2">
+            <div class="content2">
+                <h1>화면 중앙에 배치</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro temporibus aliquid delectus illum quam
+                    totam sit nobis aspernatur harum amet?</p>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <div class="center3">
+            <div class="content3">
+                <h1>flex를 이용</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro temporibus aliquid delectus illum quam
+                    totam sit nobis aspernatur harum amet?</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

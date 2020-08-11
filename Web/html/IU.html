@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이유를 소개함</title>
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #title {
+            text-align: right;
+            font-size: 50px;
+            font-family: fantasy;
+            border-bottom: 1px dashed black;
+            margin: 0px;
+            padding: 10px;
+        }
+
+        #wholestruct {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+        }
+
+        #wholestruct ol {
+            margin: 0px;
+            margin-left: 15px;
+            padding: 10px;
+            width: 220px;
+            height: 100%;
+            border-right: 1px dashed black;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- 이미지 삽입, 테이블 사용해보기 -->
+    <!-- 동영상 넣기, 오디오 넣기 -->
+    <!-- 유튜브 영상 퍼오기, iframe 사용 -->
+    <!-- form 사용하기 feat.placeholder -->
+
+    <h3 id="title">안녕 <strong>아이유</strong></h3>
+
+    <div id="wholestruct">
+        <div>
+            <ol>
+                <li> <a href="#아이유사진">그냥 아이유 사진</a></li>
+                <li> <a href="#아이유튜브">그냥 퍼온 아이유 유튜브 영상</a></li>
+                <li>그냥 넣어보는 동영상</li>
+                <li>그냥 넣어보는 오디오 </li>
+                <li>그냥 넣어보는 iframe </li>
+                <li>그냥 넣어보는 form </li>
+            </ol>
+        </div>
+        
+        <div>
+
+            <h4 id="아이유사진">그냥 아이유 사진</h4>
+            <img src="img/아이유.jpg" width="300px" alt="아이유임">
+            <br>
+
+            <h4 id="아이유튜브">그냥 퍼온 아이유 유튜브 영상</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yqtCGojXEpM" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <h4>그냥 넣어보는 동영상</h4>
+            <video src="SampleVideo_1280x720_1mb.mp4" width="560" controls autoplay loop></video>
+
+            <h4>그냥 넣어보는 오디오</h4>
+            <audio src="file_example_MP3_700KB.mp3" controls autoplay loop></audio>
+
+            <h4>그냥 넣어보는 iframe</h4>
+            <iframe src="../Website/아이유/index.html" width="100%" height="500px" :frameborder="0"></iframe>
+
+            <h3>폼도 사용해봄</h3>
+            <p>fieldset도 이용해봄</p>
+            <form action="폼.html">
+                <fieldset>
+                    <legend>폼 제목도 넣어봄</legend>
+                    <label for="name">이름? </label>
+                    <input type="text" id="name" placeholder="이름의 공간">
+                    <br>
+                    <label for="emails">이메일? </label>
+                    <input type="email" id="emails" placeholder="이메일의 공간">
+                    <br>
+                    <label for="talkabout">할 말 있는가</label>
+                    <br>
+                    <textarea style="resize: none" name="할말" id="talkabout" cols="30" rows="10"
+                        placeholder="말해보세요"></textarea>
+                    
+                        <input type="submit" value="제출!" onclick= "alert('정말 눌렀겠다?')"">
+
+                </fieldset>
+
+                <fieldset id="파일받기">
+                    <input type="file" name="upload_file" accpept="image/*">
+                </fieldset>
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

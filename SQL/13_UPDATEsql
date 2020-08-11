@@ -1,0 +1,63 @@
+-- 데이터 수정하기_ update
+
+--where절을 생략하면 지정된 컬럼의 모든 행이 수정되므로, 필히 신경쓸 것.
+--업데이트를 사용시 WHERE절에 항상 기본키를 넣어준다. 
+--(다른 열은 중복된 값이 있을 수 있음.->의도치 않게 여러 개가 수정될 수 있다)
+
+SELECT * 
+FROM copy_emp
+WHERE employee_id =100;
+
+UPDATE copy_emp
+set salary = 24100
+WHERE employee_id = 100;
+commit;
+
+--WHERE절을 안 쓰면 모든 행이 수정됨.
+UPDATE copy_emp
+set phone_number ='123.456.789'; --이렇게 하면 전부 바뀜. 
+
+ROLLBACK; --commit을 하지 않은 상황이면 롤백 가능.
+
+
+--서브쿼리를 이용해 업데이트
+SELECT *
+FROM copy_emp
+WHERE employee_id IN (100, 200);
+
+UPDATE copy_emp --employee_id 100번의 salary를, employee_id 200의 salary 값과 같은 값으로 수정함.
+SET salary = (SELECT salary 
+                FROM copy_emp
+                WHERE employee_id = 200)
+WHERE employee_id = 100;
+
+
+select *
+from copy_emp;
+
+
+--예제 ) copy_dept 테이블의 'Music' 부서의 매니저와 location ID 를 업데이트 해보자.
+--Music 부서가 없어서 INSERT 해줌.
+
+INSERT INTO copy_dept (department_id, department_name)
+VALUES                 (280, 'Music');
+
+UPDATE copy_dept
+set manager_id = 100, location_id = 1800  --이런 식으로 여러 가지를 한번에 업데이트도 가능한 듯.
+WHERE department_name = 'Music';
+
+--예제) copy_dept 테이블에서 department_id 150부터 200까지 부서번호의 manager_ID 를 100으로 수정하라.
+UPDATE copy_dept
+set manager_id = 100
+WHERE department_id BETWEEN 150 AND 200;
+
+
+
+----
+
+
+rollback;
+
+select *
+from copy_dept
+ORDER BY department_id DESC;

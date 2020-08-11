@@ -1,0 +1,72 @@
+--날짜 함수
+--SYSDATE 현재 날짜
+SELECT SYSDATE
+    FROM DUAL;
+
+--날짜와 숫자 덧뺄셈은 날짜. (일수로 더하거나 뺌)
+SELECT 
+SYSDATE, 
+SYSDATE+3,
+SYSDATE-3
+    FROM DUAL;
+
+--날짜 - 날짜 = 기간 만큼의 날
+SELECT employee_id, SYSDATE, hire_date, 
+SYSDATE-hire_date,
+ROUND(SYSDATE-hire_date)
+    FROM employees;
+
+--시간 계산    
+SELECT SYSDATE + 5/24 --(시간) 5시간을 더해준게 됨.
+    FROM DUAL;
+    
+-- months_between : 두 날짜 간의 기간을 월 수로 계산.
+SELECT employee_id, first_name, 
+MONTHS_BETWEEN(SYSDATE,hire_date),
+(SYSDATE-hire_date)/30
+    FROM employees;
+    
+--add_months : 날짜에 n달을 더한 날짜를 계산
+SELECT employee_id, first_name, hire_date,
+ADD_months(hire_date, 4) --4달 더하기
+    FROM employees;
+    
+    
+    
+--next_day 날짜 이후, 해당 요일에 해당하는 날짜 계산.
+SELECT SYSDATE, next_DAY(SYSDATE, '월요일') --오늘 이후의 월요일 날짜
+    FROM employees;
+    
+--last_day 날짜가 해당된 달의 마지막 날짜
+SELECT LAST_DAY(SYSDATE)
+    FROM DUAL;
+    
+--날짜를 반올림 ROUND(날짜, 형식)/ 뒤의 형식은 반올림 형식을 지정해주는 것
+--YYYY년도, MM 월, DD 일, HH시간, MI분, SS초
+SELECT employee_id, hire_date,
+ROUND(hire_date, 'MONTH') AS 월, --월까지 표현하는 것이므로 일에서 반올림 한 것. --반올림 하고 1일로 반환
+ROUND(hire_date, 'YEAR') AS 년 --달을 반올림 하고 1월 1일로 반환
+    FROM employees
+    WHERE MONTHS_BETWEEN(SYSDATE, hire_date) < 150;
+    
+    
+    
+    
+--예제1 employees 테이블에서 department_id가 100인 직원에 대해
+--오늘 날짜, hire_date, 오늘 날자와 hire_date 사이의 개월 수 출력
+SELECT
+SYSDATE,
+hire_date,
+MONTHS_BETWEEN(SYSDATE,hire_date) AS 적용결과
+    FROM employees
+    WHERE department_id =100;
+    
+--예제2
+--employees 테이블에서 employee_id가 100과 106 사이인 직원의
+-- hire_date에 3개월을 더한값, hire_date에 3개월을 뺀 값을 출력
+SELECT
+hire_date,
+add_months(hire_date, 3) AS 더하기3달,
+add_months(hire_date, -3) AS 빼기3달
+    FROM employees
+    WHERE employee_id BETWEEN 100 AND 106;

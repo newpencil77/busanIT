@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기본copy</title>
+  <!-- 부트스트랩 CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+
+  <style>
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- modal 오픈 버튼. 버튼으로 열 때 -->
+  <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Modal버튼
+  </button>
+
+  <!-- modal 오픈 링크 -->
+  <a href="#myModal" class="btn btn-primary" data-toggle="modal">Modal링크</a>
+
+  <!-- 자바스크립트 버튼 -->
+  <button id="myBtn1" class="btn btn-danger">JS버튼</button>
+
+
+
+  <!-- modal -->
+  <!-- <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content"> -->
+
+  <!-- modal header -->
+  <!-- <div class="modal-header">
+            <h4 class="modal-title">Modal 제목</h4>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div> -->
+
+  <!-- modal body -->
+  <!-- <div class="modal-body">
+            내용내용내용
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal 그리드</h4>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- form을 row 위에 위치시켜봄 -->
+          <form>
+            <div class="row">
+
+              <!-- 이런 식으로 form을 row 아래에 배치하면, row를 하위 div가 아닌 form 덩어리가 먹음 -->
+              <!-- <form>   -->
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="">한글이름</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="">영문이름</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+            <!-- </div> 유무임 div를 잘못줘서, row가 footer까지 들어가고 있음 -->
+
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="">Email</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="">Comments</label>
+                  <input type="textarea" class="form-control">
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <!-- body div를 footer까지 감싸는 형태로 만듦 -->
+
+
+        <div class="modal-footer">
+          <button class="btn btn-first" data-dismiss="modal">Close</button>
+          <button class="btn btn-primary" data-dismiss="modal">Send Email</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- 부트스트랩 JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script>
+    $("#myBtn1").click(function () {
+      $("#myModal").modal("toggle");
+    });
+
+  </script>
+
+
+
+</body>
+
+</html>

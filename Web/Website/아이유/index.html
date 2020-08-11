@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이유 윅킼백과</title>
+    <!-- 외부 CSS 적용 방법 -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <style>
+        /* 내부 스타일 시트(Internal Style Sheet)에 CSS 적용 
+        */
+        body {
+            background-color: #d8b9c3;
+            /* color: #363062; */
+        }
+
+        hr {
+            height: 10px;
+            background-color: white;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #363062;
+        }
+
+        a {
+            text-decoration: none;
+            color: #363062;
+        }
+    </style> -->
+
+
+</head>
+
+<body>
+
+    <!-- 위쪽 테이블 -->
+    <table>
+        <!-- 테이블을 레이아웃으로 이용한 예 -->
+        <tr>
+            <td>
+                <!-- 이미지 태그 사용 -->
+                <img src="크롭아이유.png" width="200px" alt="사진없음">
+                <!-- src는 사진의 위치. 같은 폴더에 있으면 파일명만 적으면 됨. ctrl+스페이스 활용 -->
+                <!-- alt는 사진을 불러오지 못했을 때 나올 것 -->
+                <!-- width는 사진 사이즈 조절 -->
+            </td>
+            <td>
+                <h1>🧡아이유</h1>
+                <p><strong>아이유</strong>는 대한민국의 가수이자 배우<br>
+                    아이유(<em>IU</em>)라는 이름은 '<em>I</em>'와 '<em>You</em>'를 합친 합성어로, '너와 내가 음악으로 하나가 된다'는 의미다</p>
+                <a href="contact.html">제작자 연락처</a>
+            </td>
+
+
+        </tr>
+    </table>
+
+
+    <hr>
+    <p>윅킼백과, 우리 모두의 백과사전.</p>
+    <!-- 오른쪽 테이블 -->
+    <div style="border: 2px solid white; display: table; float: right;">
+        <!-- 테이블 만들기. 테이블을 레이아웃 용도로 사용하기도 함 -->
+        <table cellspacing="5" style="text-align: left;">
+            <!--  테이블을 border라고 따로 속성명이 있음 -->
+            <!-- 첫행 -->
+            <tr class = "titlerow">
+                <!-- th는 굵은글씨로 써짐. 제목셀 -->
+                <th colspan="2">
+                    <h3>아이유</h3>
+                </th>
+            </tr>
+            <!-- 이미지 -->
+            <tr>
+                <th colspan="2"><img src="아이유골든.jpg" width="300px" alt="사진x"></th>
+            </tr>
+            <tr class = "titlerow">
+                <th colspan="2">기본정보</th>
+            </tr>
+            <tr>
+                <th>본명</th>
+                <td>이지은</td>
+            </tr>
+            <tr>
+                <th>츨생</th>
+                <td>1993년 5월 16일 (26세)<br>
+                    대한민국 서울특별시 광진구
+                </td>
+            </tr>
+            <tr>
+                <th>거주지</th>
+                <td>대한민국 서울특별시 용산구 이촌동</td>
+            </tr>
+            <tr>
+                <th>직업</th>
+                <td>가수, 배우, 싱어송라이터</td>
+            </tr>
+            <tr>
+                <th>장르</th>
+                <td>발라드, 어쿠스틱, R&B</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- 왼쪽 목차 -->
+    <div style="background-color: lightcyan; border: 1px solid black;
+    display: table;">
+        <!-- 제목 -->
+        <h4>👉목차</h4>
+
+        <!-- 리스트 -->
+        <ol>
+            <li><a href="https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%9C%A0#%ED%95%99%EB%A0%A5"
+                    target="_blank">학력</a></li>
+            <li><a href="https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%9C%A0#%EC%83%9D%EC%95%A0"
+                    target="_blank">생애</a>
+                <ul style="list-style-type: none;">
+                    <li>2.1 초기 생애</li>
+                    <li>2.2 2008~ 2013</li>
+                    <li>2.3 2014~ 2018</li>
+                    <li>2.4 2019~ 현재</li>
+                </ul>
+            </li> <!-- '생애' 리스트 안에 또 리스트를 작성  -->
+            <li><a href="https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%9C%A0%EC%9D%98_%EC%9D%8C%EB%B0%98_%EB%AA%A9%EB%A1%9D"
+                    target="_blank">음반 목록</a></li>
+            <li><a href="https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%9C%A0%EC%9D%98_%EC%BD%98%EC%84%9C%ED%8A%B8_%ED%88%AC%EC%96%B4_%EB%AA%A9%EB%A1%9D"
+                    target="_blank">콘서트 투어 목록</a></li>
+            <li><a href="https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%9C%A0%EC%9D%98_%EC%9E%91%ED%92%88_%EB%AA%A9%EB%A1%9D"
+                    target="_blank">작품 목록</a></li>
+            <li><a href="#skills">스킬</a></li>
+        </ol>
+    </div>
+    <hr>
+    <!-- 취미 -->
+    <br>
+    <h3><a href="hobby.html">아이유의 취미</a></h3>
+    <br>
+
+    <hr>
+    <h2>학력</h2>
+    <ul>
+        <li>하남천현초등학교(전학)->서울양남초등학교(졸업)</li>
+        <li>언주중학교(졸업)</li>
+        <li>동덕여자고등학교(졸업)</li>
+    </ul>
+    <br>
+    <hr>
+
+    <h2>커리어</h2>
+    <table>
+        <tr>
+            <th>날짜</th>
+            <th>앨범</th>
+        </tr>
+        <tr>
+            <td>2009~2011</td>
+            <td><a href="https://namu.wiki/w/Growing%20Up" target="_blank">Growing Up<img
+                        src="https://ww.namu.la/s/fbe87147c0c694bdaec79f94bc05b72242fdb706c626c6d7075363fa8e31b932a9d7bd5f3655b40a2ef1e5f6bd2c288b4b34140072e0039b6b19cec83e347d1c14e07365d4a8f850a9fb6affaedb5489167856aa6efa3864a1de232be14993c0"
+                        width="40" alt="사진없다"></a></td>
+        </tr>
+        <tr>
+            <td>2011~2013</td>
+            <td><a href="https://namu.wiki/w/Last%20Fantasy" target="_blank">Last Fantasy<img
+                        src="https://w.namu.la/s/ac58e0d14b36658f58b049ccc2b441e162683d7659857e46350e7b87bd8c8635259468694a7e45be30cd4bb9a2b433fc58aa0547c400b8debb3636541f15ded35081bce818569f7391c5c689d1d0a953b8bab48755c41526b0b68f714c31a0b47b22dd8855bc814ca39c9fbc7eff4f6a"
+                        width="40" alt="사진없다"></a></td>
+        </tr>
+        <tr>
+            <td>2013~2017</td>
+            <td><a href="https://namu.wiki/w/Modern%20Times" target="_blank">Modern times<img
+                        src="https://w.namu.la/s/35d25c55317e8d29d11fa9fa1a41348ee63d3a010f356d360a9dcdc95513885e4c3143831db6c08d2e387e6db67702b7a8631594931a4200d1d5eb23b2d2153d32fd782419cd2d103cee9d787d49574d9afd3782d0db8530be5862f1e8755ef9335cbc30abe5422e7843537e7e8d89e8"
+                        width="40" alt="사진없다"></a></td>
+        </tr>
+
+    </table>
+    <br>
+    <hr>
+    <!-- 같은 페이지 내의 위치로 이동하기 위해 아이디 지정 -->
+    <h2 id="skills">Skills</h2>
+
+    <table>
+
+        <tr>
+            <th>HTML(5)</th>
+            <td>🔆🔆🔆🔆🔆</td>
+        </tr>
+        <tr>
+            <th>CSS(3)</th>
+            <td>🔆🔆🔆🔆🔆</td>
+        </tr>
+        <tr>
+            <th>JavaScript</th>
+            <td>🔆🔆</td>
+        </tr>
+
+        <p>이런 기능도 있죠 <abbr title="HyperText Markup Language 5">HTML5</abbr></p>
+
+    </table>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit maiores alias illo repellat
+        necessitatibus minima quis neque eveniet eaque cumque ducimus voluptatibus voluptatem, quibusdam, vero nihil
+        maxime et sed, asperiores aut beatae quo atque. Dolorem porro dicta repellat ipsa odit doloremque, illo sequi
+        obcaecati suscipit id eveniet. Esse quam quae hic quo tempora odit possimus, earum, quis suscipit qui ipsa culpa
+        impedit quod recusandae labore quaerat reiciendis ex ut quos libero dolorem, eligendi aliquid eos. At
+        consectetur quo atque similique a ipsam modi quasi cum saepe quae sed, numquam voluptas dolorum veniam in
+        repellat tempora laudantium eligendi eveniet neque vero quisquam! Fuga beatae minus facere nostrum saepe
+        dignissimos magnam officia maiores atque iste dolorem error facilis maxime explicabo soluta, ratione cum aliquid
+        quidem nesciunt rerum exercitationem pariatur, aspernatur minima! Voluptas repudiandae iure harum architecto
+        ratione fugiat inventore laborum ducimus, corrupti similique tempora commodi eaque fuga exercitationem illo
+        voluptatem provident tempore. Fugiat cupiditate quibusdam reiciendis doloribus magni expedita doloremque sequi
+        itaque. Aliquid minus odit aperiam, illum quisquam assumenda beatae ad non quidem labore consequuntur temporibus
+        expedita autem? Omnis veniam repudiandae ut fugit maxime asperiores dignissimos odio beatae iste deleniti
+        voluptates alias earum quaerat molestiae facilis reprehenderit, nulla saepe architecto dolore cumque est amet
+        sapiente quae! Ad modi voluptas facere, consectetur fugiat cum est iste temporibus repellat, sunt, maiores
+        expedita corporis ab numquam? At cum deleniti nisi, aperiam non unde saepe tenetur a animi. Quaerat magni, dolor
+        ab, voluptatibus commodi dolore pariatur obcaecati cupiditate dicta cum eveniet dolores. Eum libero architecto
+        eos nesciunt nulla expedita repudiandae! Aperiam quo nostrum aut libero veniam id a, nam provident eos
+        distinctio aliquam praesentium voluptate, aspernatur qui, nihil neque voluptas iure adipisci. Ad deserunt saepe
+        atque quod quisquam, blanditiis cum consectetur repellat quis exercitationem cumque eligendi, veritatis fugit.
+        Magnam dolores a consectetur asperiores vero deleniti amet, eum, modi repellat sunt ut hic aliquam cumque vitae
+        sequi fugit obcaecati officiis perspiciatis quos libero. Repudiandae eos laboriosam, nulla ipsam cupiditate iure
+        quibusdam quisquam, dolorum unde molestiae porro consequuntur, sapiente natus. Necessitatibus tempora autem
+        laudantium iusto ipsa quis corporis quam excepturi explicabo, temporibus nobis! Nostrum vero quaerat asperiores
+        rerum, obcaecati, quam id soluta corrupti assumenda repudiandae sed architecto reiciendis at quis, animi
+        laboriosam autem cum? Doloremque maiores voluptatibus iste fuga. Perferendis molestiae, cumque accusantium
+        inventore distinctio ipsam consequuntur illum alias ab magni quae, similique, eaque officiis pariatur placeat?
+        Dolorem sequi, necessitatibus accusamus harum commodi odit minima ea ab consectetur nisi incidunt reiciendis
+        dolores, facilis natus sapiente. Quae aspernatur animi laudantium alias at ut, nulla veniam ullam obcaecati,
+        eaque itaque nisi ipsam vero eligendi explicabo reiciendis similique facere magnam saepe? Asperiores
+        necessitatibus molestias est amet tenetur, illum quae repudiandae magnam ratione doloremque. Dicta eaque iusto
+        blanditiis, ipsam id rem ea aliquam inventore omnis nam iure ut laborum eveniet saepe excepturi officiis
+        repudiandae. Nisi ipsa sequi esse fugiat deleniti reiciendis temporibus minus tempore voluptate excepturi!
+        Corporis maiores est sed saepe veniam distinctio voluptatum dignissimos vel doloribus. Dicta recusandae beatae
+        soluta distinctio et tenetur dolores, vel error hic necessitatibus amet quo corporis quaerat laudantium minima
+        architecto quas animi ex facilis. Maxime, eius excepturi laborum obcaecati cupiditate ut! Quasi, consectetur
+        inventore. Libero illum dolorum quam adipisci vero quo neque et optio sit architecto inventore officia dolor,
+        quia praesentium molestiae minima. Atque non eveniet omnis eos natus fugit totam eaque laudantium tempora
+        similique necessitatibus nobis, dicta dolores nostrum maxime adipisci odit saepe corporis. Quisquam fuga quod
+        cupiditate maiores nisi laudantium at quia sint aliquid necessitatibus temporibus natus, perferendis modi
+        tempora sequi molestiae beatae placeat quibusdam ipsam tempore? Magnam excepturi minima recusandae repellat enim
+        architecto, tempore harum, similique voluptas molestias itaque qui quisquam dolore ut. At accusantium delectus,
+        unde iste qui, corrupti quidem repudiandae et beatae sapiente, sunt excepturi! Nobis est pariatur sed accusamus
+        odit ut illo quaerat neque voluptatibus expedita esse, maxime similique nostrum minima quibusdam maiores
+        possimus numquam! Nemo veritatis a sit quas tempore dolor, repellat adipisci? Rerum, dicta esse quia nihil
+        asperiores aliquid. Hic placeat possimus suscipit minima nostrum, eius molestiae ratione vero sequi
+        exercitationem voluptatem in nobis, repudiandae et incidunt? Quaerat molestiae aspernatur ducimus doloribus nisi
+        voluptas ut corporis distinctio dolorem aliquid, vel adipisci eum repellat officia qui quisquam unde ad labore
+        molestias. Perspiciatis officiis laborum est reprehenderit sed veniam dolorem quam odio, molestias odit
+        exercitationem perferendis facilis quod molestiae. Repudiandae est dolor eius similique, odit autem ex maiores,
+        reiciendis veniam reprehenderit expedita temporibus! Tenetur dolore rem aliquam ipsa optio, fugit nostrum enim
+        quia placeat? Error, assumenda. Vel cum consectetur quos ea, aperiam qui perferendis dignissimos accusamus et
+        deserunt maxime culpa cumque perspiciatis laborum placeat ipsa necessitatibus sunt debitis repudiandae
+        voluptatem soluta corrupti sequi? Autem consequuntur ipsam nesciunt velit. Suscipit qui eligendi cupiditate
+        maiores commodi architecto natus error porro! Error obcaecati dolore porro perspiciatis suscipit beatae dicta
+        quaerat, perferendis asperiores facilis exercitationem debitis blanditiis quia architecto deserunt cumque
+        aperiam provident quam corrupti maiores repellendus recusandae inventore ex. Dolorem accusantium ullam
+        dignissimos aliquam quos suscipit corrupti officiis inventore totam id. Quos, sequi suscipit. In veniam expedita
+        aspernatur officiis minima? Odit optio, dolorum rem harum voluptatibus consequuntur alias doloremque, illum qui
+        blanditiis aliquid dolores, sit repudiandae iusto consectetur mollitia quaerat reprehenderit. Vero cupiditate
+        aliquid voluptatibus rem aliquam ipsum est vitae, cum asperiores accusantium obcaecati cumque beatae unde nemo
+        id ad qui accusamus! Molestiae doloribus accusamus odio aliquid nemo hic. Veritatis aperiam laboriosam in ad
+        nesciunt, recusandae ipsa eveniet aspernatur molestias cumque provident animi sapiente a exercitationem officiis
+        accusantium at ut cupiditate qui corporis non fugit libero. Minus, at sit eveniet eius placeat ab deleniti quia
+        nostrum asperiores recusandae illum quidem totam, alias neque! Corrupti alias atque iusto asperiores suscipit
+        quis, facilis exercitationem reiciendis! Animi, voluptates exercitationem! Odit ducimus vel fugiat, inventore
+        accusamus minima amet reiciendis a possimus facere nesciunt quo veritatis ut recusandae placeat dolor architecto
+        iure sit, ipsa modi sint? Quo fugit tempore illum aperiam obcaecati cumque quod sed consectetur vel, in possimus
+        odio deleniti animi minima atque ipsum porro debitis a sunt. Iure ipsam nesciunt similique ex voluptatem!
+        Cupiditate cumque, hic et id itaque vel aspernatur minus saepe vitae amet. Culpa.</p>
+    <br>
+    <hr>
+    <br>
+
+    <form action="index.html">
+        <strong>이름</strong>
+        <input type="text">
+        <br>
+        <em>간략평가</em>
+        <select name="점수">
+            <option value="1">노력하세요</option>
+            <option value="2">보통입니다</option>
+            <option value="30000" selected>최고네요</option>
+        </select>
+        <br>
+        <textarea name="" id="" cols="30" rows="10" placeholder="할 말 있으십니까" style="resize: none" ;></textarea>
+        <input type="submit" value="애정을 담아💛">
+
+    </form>
+
+
+
+
+</body>
+
+</html>

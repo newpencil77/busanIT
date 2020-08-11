@@ -1,0 +1,39 @@
+--유저 만들기
+CREATE USER john 
+IDENTIFIED BY 0000; --JOHN 유저 생성. 비밀번호 0000
+--이 상태론 접속이 안됨. CREATE SESSION (접속?)권한이 없음
+
+--권한주기
+GRANT CREATE SESSION TO JOHN;  --JOHN 유저에게 접속권한을 부여
+--테이블을 만들 수 있는 권한 부여
+GRANT CREATE TABLE TO JOHN; --JOHN 유저에게 테이블 생성 권한 부여
+
+--JOHN의 테이블 스페이스 만들기
+CREATE TABLESPACE JOHNSPACE 
+DATAFILE 'C:\oraclexe\app\oracle\oradata\XE\JOHN.DBF' SIZE 10M --해당 경로에 시작 용량 10MB로 생성 
+AUTOEXTEND ON NEXT 5M; --테이블 공간을 다 쓰면 용량 5MB 증가
+
+ALTER USER JOHN DEFAULT TABLESPACE JOHNSPACE; --유저 JHON에게 새로만든 JOHNSPACE를 기본 테이블스페이스로 설정해줌
+ALTER USER JOHN QUOTA UNLIMITED ON JOHNSPACE; --JOHNSPACE에 사용할 수 있는 권한 부여
+
+--롤(Role) 부여. 일종의 권한 묶음.
+--CONNECT 접속관련 권한들의 모음 
+--RESOURCE 객체(생성, 수정, 삭제), 데이터(입력, 수정, 조회, 삭제) 권한 
+GRANT CONNECT, RESOURCE TO JOHN;
+
+--권한을 제거, 회수
+REVOKE CREATE TABLE FROM JOHN; --테이블 만들 수 있는 권한을 회수함 --이제 JOHN은 테이블을 못 만듦
+--객체 관련 모든 권한 제거
+REVOKE RESOURCE FROM JOHN; 
+
+--계정 삭제
+DROP USER JOHN CASCADE; --JOHN이 접속되어 있지 않을 때 가능. 
+
+--테이블스페이스 삭제
+DROP TABLESPACE JOHNSPACE;
+
+
+--관리자 계정의 비번을 잊었을 때
+--윈도우 CMD 창 열기 
+--sqlplus "/as sysdba"
+--ALTER USER SYSTEM IDENTIFIED BY 0000 --새 비밀번호

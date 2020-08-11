@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <link rel="shortcut icon" href="img/airbnb.ico" type="image/x-icon">
+
+    <!-- 폰트오썸 CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .joinBox {
+            padding: 10px;
+            width: 500px;
+            height: 330px;
+            background-color: white;
+            /* border: 1px solid black; */
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .joinBox .innerbox {
+            margin: 5px;
+        }
+
+        .joinBox a {
+            text-decoration: none;
+        }
+
+
+        .exitbtn, .login {
+            /* margin-top: 10px; */
+            width: 90%;
+            height: 40px;
+            color: black;
+
+            display: flex;
+            align-items: center;
+        }
+
+        /* .exitbtn div {
+            margin: 0;
+        } */
+        
+        .exitbtn a {
+            color: black;
+        }
+
+        .innerbox {
+            width: 90%;
+            height: 40px;
+            border-radius: 3%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .joinBox i,
+        img {
+            margin-right: 10px;
+        }
+
+        .fa-facebook-f,
+        .fa-envelope {
+            color: white;
+        }
+
+        /* 페이스북 */
+        .joinBox div:nth-child(2) {
+            background-color: rgb(69, 104, 178);
+        }
+
+        .joinBox div:nth-child(2) a {
+            color: white;
+        }
+
+        /* 구글 */
+        .joinBox div:nth-child(3) {
+            background-color: white;
+            border: 2px solid rgb(118, 118, 118);
+
+        }
+
+        .joinBox div:nth-child(3) a {
+            color: #484848;
+        }
+
+        /* 또는 */
+        .joinBox div:nth-child(4)
+        {
+            margin: 0;
+            color: rgb(118, 118, 118);
+        }
+        
+        /* 이메일 */
+        .joinBox div:nth-child(5) {
+            background-color: rgb(255, 90, 95);
+        }
+
+        .joinBox div:nth-child(5) a {
+            color: white;
+        }
+
+
+        /* 이미 에어비앤비 계정이 있나요?*/
+        .joinBox div:nth-child(6)
+        {
+            font-weight: 400;
+        }
+    
+        .joinBox div:nth-child(6) a {
+            color: #008489;
+        }
+
+
+
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="joinBox">
+
+            <!-- x버튼 1-->
+            <div class="exitbtn">
+                <div>
+                    <a href='javascript:window.close();'><i class="fas fa-times"></i></a></div>
+            </div>
+
+            <!-- face 2-->
+            <div class="innerbox">
+                <a href="#">
+                    <div><i class="fab fa-facebook-f"></i>페이스북 계정으로 회원가입</div>
+                </a>
+            </div>
+
+            <!-- 구글 3-->
+            <div class="innerbox">
+                <div>
+                    <a href="#">
+                        <div><img src="img/google.png" alt="구글">구글 계정으로 회원가입</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="innerbox">
+                <div>또는</div>
+            </div>
+
+            <!-- 5 -->
+            <div class="innerbox">
+                <div>
+                    <a href="#">
+                        <div><i class="far fa-envelope"></i>이메일로 회원 가입</div>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- 6 -->
+            <div class="login">
+                <div>이미 에어비앤비 계정이 있나요? <a href="#">로그인</a></div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+--문자형 char와 varchar2 비교
+
+CREATE TABLE comp(
+    char_col CHAR(4),
+    varchar_col VARCHAR2(4)
+    );
+    
+INSERT INTO comp
+                 VALUES ('AA','AA');
+
+INSERT INTO comp
+                 VALUES ('AAAA','AAAA');
+
+SELECT *
+FROM comp;
+
+SELECT *
+FROM comp
+WHERE char_col = varchar_col;
+
+
+--DATE 날짜
+--날짜형 데이터는 년도~ 초까지 정보를 가지는 데이터 형태로 저장. 따로 형식x. 열에서 보여질 땐 간단히 보여질 뿐.
+
+SELECT hire_date, TO_CHAR(hire_date, 'YYYY-MM-DD') AS "날짜->문자 형 변환"
+FROM employees;
+
+SELECT *
+FROM employees
+WHERE hire_date < '2002/03/03'; --오른쪽 문자열이 암묵적으로 형이 변환되어 hire_date와 비교됨

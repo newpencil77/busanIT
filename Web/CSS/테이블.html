@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+
+    <style>
+
+    /* body
+    {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .container
+    {
+        width: 60%;
+        height: 50%;
+        transition: all 4s ease-in-out;
+
+    } */
+
+    /* .container:hover {
+         background: red; 
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        transform: rotate(0.2turn);
+      } */
+
+
+
+        table
+        {
+            /* 겹치는 라인 없앰 */
+            border-collapse: collapse;
+            width: 80%;
+
+        }
+
+
+
+
+        table, td, th
+        {
+            border: 1px solid black;
+            /* border-bottom: 1px solid black; */
+        }
+
+
+        th
+        {
+            text-align: left;
+            height: 2em;
+
+            /* 수직 정렬 */
+            vertical-align: center;
+        }
+
+        /* 패딩 주는 것 가능 */
+        th, td
+        {
+            padding: 10px;
+        }
+
+
+        tr:nth-child(even)
+        {
+            background-color: gray;
+        }
+
+        /* tr:hover
+        {
+            background-color: brown;
+            
+        } */
+        
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th>성</th>
+            <th>이름</th>
+        </tr>
+        <tr>
+            <td>홍</td>
+            <td>길동</td>
+        </tr>
+        <tr>
+            <td>김</td>
+            <td>유신</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+
+</html>

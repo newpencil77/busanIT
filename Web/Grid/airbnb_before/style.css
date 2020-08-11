@@ -1,0 +1,52 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* body {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif; */
+
+
+    main, article, header, nav, aside, details, figcaption, figure, footer, section 
+    {
+        display: block;
+    }
+
+    .btn-link, input, textarea, select, button, a 
+    {
+        font-weight: inherit;
+    }
+
+    
+
+/* @media (min-width: 1440px)
+    ._1p2rzib {
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+    }   
+
+@media (min-width: 375px).COVID_aside {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+} */
+
+.COVID_aside
+{
+    padding: 16px 24px;
+    background-color: #F7F7F7 ;
+    color: #222222;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.COVID_aside a
+{
+    color: inherit;
+    display: inline-block;
+    font-weight: 600;
+}
+

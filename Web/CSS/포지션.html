@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션</title>
+
+    <style>
+
+    .container
+    {
+        width: 600px;
+        margin: 0 auto;
+        height: 300px;
+        border: 2px solid gray;
+
+    }
+
+    .box
+    {
+        width: 100px;
+        height: 100px;
+        opacity: 0.9;
+    }
+
+
+    .red
+    {
+        background-color: tomato;
+        z-index: 10;
+    }
+
+    .green
+    {
+        background-color: yellowgreen;
+        z-index: -1;
+
+    }
+
+    .blue
+    {
+        background-color: skyblue;
+        z-index: -2;
+    }
+
+/* 원래 자신이 있던 위치를 기준으로 위치 지정. */
+    .relative
+    {
+        position: relative;
+        top: -30px;
+        left: 50px;
+    
+    }
+    
+    /* 기준이 없으면 화면 전체를 기준으로 위치를 지정 */
+    /* 원래있던 자리에서 float하는 식으로 취급함. 밑에 박스가 있었으면 올라옴 */
+    .absolute
+    {
+        position: absolute;
+        left: 250px;
+        top: 20px;
+    }
+
+    .fixed
+    {
+        background-color: violet;
+        position: fixed;
+        top: 200px;
+        right: 20px;
+    }
+
+    </style>
+
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box green relative"></div>
+        <div class="box blue absolute"></div>
+        <div class="box fixed"></div>
+    </div>
+
+</body>
+</html>

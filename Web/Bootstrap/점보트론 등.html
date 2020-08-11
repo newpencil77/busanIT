@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>부트스트랩 CDN 적용</title>
+    <!-- 부트스트랩 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <style></style>
+  </head>
+
+  <body>
+    <!-- 점보트론 -->
+    <div class="container">
+      <h1>Bootstrap</h1>
+      <h3><code>.jumbotron</code></h3>
+      <div class="jumbotron">
+        <h1 class="display-4">점보트론</h1>
+        <p class="lead">
+          점보트론(Jumbotron)는 소니에서 1985년 공개한 대형 스크린 TV의
+          상표명으로 각종 스포츠 경기장 및 콘서트장에서 사용되었다.
+        </p>
+        <hr class="my-3" />
+        <p>
+          2001년 공식적으로 단종 되었으나 점보트론의 단어 자체는 일반명사화 되어
+          대형 전광판을 통칭하기도 한다.
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button"
+            >자세히 알아보기</a
+          >
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 프로그래스 바 -->
+    <div class="container">
+     <!-- Striped -->
+     <div class="progress">
+       <div class="progress-bar bg-info progress-bar-striped" style="width:30%"></div>
+      </div><br>
+      <!-- Animated -->
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+      </div><br>
+      <!-- Multi -->
+      <div class="progress">
+        <div class="progress-bar bg-success" style="width:40%">
+          Free Space
+        </div>
+        <div class="progress-bar bg-warning" style="width:10%">
+          Warning
+        </div>
+        <div class="progress-bar bg-danger" style="width:20%">
+          Danger
+        </div>
+      </div>
+
+      <br>
+
+      <!-- 툴팁 -->
+      <div class="container">
+        <!-- TOOLTIPS -->
+        <button class="btn btn-primary my-3" data-toggle="tooltip" data-placement="top" title= "툴팁1">툴팁 위쪽</button>
+        <button class="btn btn-success">툴팁 오른쪽</button>
+        <button class="btn btn-warning">툴팁 아래쪽</button>
+        <button class="btn btn-danger">툴팁 왼쪽</button>
+      </div>
+
+      <!-- 팝 오버 -->
+      <div class="container">
+        <button 
+        class="btn btn-primary my-3" 
+        data-toggle="popover" 
+        data-placement="top" 
+        data-content= "내용을 적습니다.">팝오버 위쪽</button>
+
+
+
+      </div>
+
+        
+        
+        <!-- 부트스트랩 JS, Popper.js, and jQuery -->
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--툴팁초기화  -->
+
+    <script>
+      $('[data-toggle="tooltip"]').tooltip();
+      // 데이터 토글이 tooltip이면 tooltip()실행
+
+      $('[data-toggle="popover"]').popover();
+      //popover초기화
+    </script>
+    
+  </body>
+</html>

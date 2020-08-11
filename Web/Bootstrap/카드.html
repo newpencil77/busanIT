@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>카드</title>
+  <!-- 부트스트랩 CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+
+  <style>
+
+    .card-columns .card
+    {
+      display: inline-block;
+      -webkit-column-break-inside: avoid;
+    }
+
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- <div class="card m-3">
+    <div class="card-body">기본카드</div>
+  </div>
+
+  <div class="card m-3">
+    <div class="card-header">카드 헤더</div>
+    <div class="card-body">카드 바디</div>
+    <div class="card-footer">카드 푸터</div>
+  </div> -->
+
+  <!-- 심플카드 -->
+  <!-- <div class="card m-3" style="width:20rem;">
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <h6 class="card-subtitle text-muted">Card subtitle</h6>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      <a href="#" class="btn btn-outline-primary">Read more</a>
+    </div>
+  </div> -->
+
+  <!-- 그림 카드 -->
+  <!-- <div class="card m-3">
+    <img class="card-img-top" src="https://source.unsplash.com/600x400/?animal,dog" alt="물">
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <h6 class="card-subtitle text-muted">Card subtitle</h6>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      <a href="#" class="btn btn-outline-primary">Read more</a>
+    </div>
+  </div> -->
+
+<!-- 
+  <div class="card m-3">
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <h6 class="card-subtitle text-muted">Card subtitle</h6>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      <a href="#" class="btn btn-outline-primary">Read more</a>
+      <img class="card-img-bottom" src="https://source.unsplash.com/random/600x400/" alt="랜덤이미지">
+    </div>
+  </div> -->
+
+  <!-- 헤더카드 -->
+  <!-- <div class="card m-3">
+    <div class="card-header">
+      My Card
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      <a href="#" class="btn btn-danger">Read more</a>
+    </div>
+  </div> -->
+
+  <!-- 헤더카드. 가운데 정렬 -->
+  <!-- <div class="card m-3 text-center">
+    <div class="card-header">
+      My Card
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      <a href="#" class="btn btn-dark">Read more</a>
+    </div>
+    <div class="card-footer text-muted">Bye</div>
+  </div> -->
+
+
+  <!-- 이미지 오버레이 -->
+  <!-- <div class="card m-3">
+    <img class="card-img-top" src="https://source.unsplash.com/1000x300/?animal,dog" alt="멍멍">
+    <div class="card-img-overlay">
+      <h4 class="card-title">Card Title</h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      <a href="#" class="btn btn-outline-primary">Read more</a>
+    </div>
+  </div> -->
+
+  <!-- 색을 넣은 카드 -->
+  <!-- <div class="card bg-primary text-white m-3">
+    <div class="card-header">
+      My Card
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+    </div>
+  </div>
+
+  <div class="card bg-danger text-white m-3">
+    <div class="card-header">
+      My Card
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+    </div>
+  </div> -->
+
+  <!-- 보더라인 카드 -->
+  <!-- <div class="card border-primary m-3">
+    <div class="card-header">
+      My Card
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+    </div>
+  </div> -->
+
+  <!-- 카드 컬럼. 기본 3열 -->
+
+  <div class="container">
+
+    <div class="card-columns">
+      <!-- 1 그림카드 -->
+    <div class="card">
+      <img class="card-img-top" src="https://source.unsplash.com/600x400/?animal,dog" alt="개">
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <h6 class="card-subtitle text-muted">Card subtitle</h6>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+        <a href="#" class="btn btn-outline-primary">Read more</a>
+      </div>
+    </div>
+    <!-- 2 헤더카드 -->
+    <div class="card">
+      <div class="card-header">
+        My Card
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+        <a href="#" class="btn btn-danger">Read more</a>
+      </div>
+    </div>
+    <!-- 3 색 카드 -->
+    <div class="card bg-primary text-white">
+      <div class="card-header">
+        My Card
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      </div>
+    </div>
+    <!-- 4 색 카드 -->
+    <div class="card bg-warning text-white">
+      <div class="card-header">
+        My Card
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      </div>
+    </div>
+    <!-- 5 보더라인 카드 -->
+    <div class="card border-primary">
+      <div class="card-header">
+        My Card
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      </div>
+    </div>
+<!-- 6 보더라인 카드 -->
+    <div class="card border-primary">
+      <div class="card-header">
+        My Card
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, enim?</p>
+      </div>
+    </div>    
+    
+  </div>
+</div>
+  
+  
+  
+  
+  
+  
+  <!-- 부트스트랩 JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+  </script>
+
+
+
+</body>
+
+</html>

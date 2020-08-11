@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부트스트랩 CDN 적용</title>
+    <!-- 부트스트랩 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style>
+            .mycolor
+            {
+                color: darkgreen
+            }
+
+            .myBackGroundColor
+            {
+                background-color: aqua;
+            }
+
+            .mycolor2
+            {
+                color:darkslateblue
+            }
+
+            .myBackGroundColor2
+            {
+                background-color: aquamarine
+            }
+
+            .Container
+            {
+                width: 50%
+            }
+
+            .myp
+            {
+                margin: 0
+            }
+
+        </style>
+
+</head>
+
+
+<body>
+    <button class="btn btn-primary">버튼</button>
+    <button class="btn btn-warning">버튼</button>
+    <button class="btn btn-danger">버튼</button>
+    <button class="btn btn-info">버튼</button>
+    <button class="btn btn-dark">버튼</button>
+    <button class="btn btn-outline-primary btn-block">버튼</button>
+    <button class="btn btn-outline-secondary">버튼</button>
+    <button class="btn btn-primary btn-lg">큰버튼</button>
+    <button class="btn btn-dark btn-sm">작은 버튼</button>
+    <button class="btn btn-dark" disabled>버튼</button>
+
+    <!-- h1~ h6 -->
+
+    <h1>h1. Bootstrap heading</h1>
+    <h2>h2. Bootstrap heading</h2>
+    <h3>h3. Bootstrap heading</h3>
+    <h4>h4. Bootstrap heading</h4>
+    <h5>h5. Bootstrap heading</h5>
+    <h6 class="text-muted">h6. Bootstrap heading</h6>
+
+    <!-- display 1~4 -->
+    <h1 class="display-1 text-right"><mark>Display 1</mark></h1>
+    <h1 class="display-2 text-center">Display 2</h1>
+    <h1 class="display-3 text-black-50">Display 3</h1>
+    <h1 class="display-4">Display 4</h1>
+
+    <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+
+    <!--  글자색깔 -->
+    <p class="text-primary">.text-primary</p>
+    <p class="text-secondary">.text-secondary</p>
+    <p class="text-success">.text-success</p>
+    <p class="text-danger">.text-danger</p>
+    <p class="text-warning">.text-warning</p>
+    <p class="text-info">.text-info</p>
+    <p class="text-light bg-dark">.text-light</p>
+    <p class="text-dark">.text-dark</p>
+    <p class="text-body">.text-body</p>
+    <p class="text-muted">.text-muted</p>
+    <p class="text-white bg-dark">.text-white</p>
+    <p class="text-black-50">.text-black-50</p>
+    <p class="text-white-50 bg-dark">.text-white-50</p>
+    <p class="mycolor">.mycolor</p>
+
+
+    <!-- 부트스트랩 예제1 -->
+    <div class= "Container">
+        <h1 class="text-center">백그라운드 colors</h1>
+        <p class="myp bg-primary text-white">.bg-primary</p>
+        <p class="myp bg-secondary text-white">.bg-primary</p>
+        <p class="myp bg-success text-white">.bg-primary</p>
+        <p class="myp bg-danger text-white">.bg-primary</p>
+        <p class="myp bg-warning text-dark">.bg-primary</p>
+        <p class="myp bg-info text-white">.bg-primary</p>
+        <p class="myp bg-dark text-white">.bg-primary</p>
+        <p class="myp bg-white text-dark">.bg-primary</p>
+        <p class="myp bg-transparent text-dark">.bg-primary</p>
+    </div>
+        
+
+    <!-- 부트스트랩 예제2 -->
+    <h2>부트스트랩 텍스트</h2>
+    <code>.text-muted</code>
+    <p class="text-muted">이 서비스는 더이상 이용할 수 없습니다.</p>
+    <code>.text-primary</code>
+    <p class="text-primary">당신은 먼저 이용조건과 약관에 동의해야합니다.</p>
+    <code>.text-success</code>
+    <p class="text-success">비밀번호가 성공적으로 변경되었습니다.</p>
+    <code>.text-info</code>
+    <p class="text-info">다음 열차는 5분 내에 도착할 예정입니다.</p>
+    <code>.text-warning</code>
+    <p class="text-warning">POLICE LINE: 이 선을 넘지 마시오.</p>
+    <code>.text-danger</code>
+    <p class="text-danger">여기는 방사능 오염구역입니다.</p>
+
+    <!-- 부트스트랩 예제3 -->
+
+    <h2>부트스트랩 백그라운드</h2>
+    <code>.bg-primary</code>
+    <p class="bg-primary">당신은 먼저 이용조건과 약관에 동의해야합니다.</p>
+    <code>.bg-success</code>
+    <p class="bg-success">비밀번호가 성공적으로 변경되었습니다.</p>
+    <code>.bg-info</code>
+    <p class="bg-info">다음 열차는 5분 내에 도착할 예정입니다.</p>
+    <code>.bg-warning</code>
+    <p class="bg-warning">POLICE LINE: 이 선을 넘지 마시오.</p>
+    <code>.bg-danger</code>    
+    <p class="bg-danger">여기는 방사능 오염구역입니다.</p>
+
+    <!-- 부트스트랩 예제4 -->
+    <h2>부트스트랩 영문철자</h2>
+    <code>.text-lowercase</code>
+    <p class="text-lowercase">Lorem ipsum dolor sit amet.</p>
+    <code>.text-uppercase</code>
+    <p class="text-uppercase">Lorem ipsum dolor sit amet.</p>
+    <code>.text-capitalize</code>
+    <p class="text-capitalize">Lorem ipsum dolor sit amet.</p>
+
+
+    <!-- 부트스트랩 예제5 -->
+    <h2>Bootstrap's Text 정렬 클래스</h2>
+    <div class="Container f">
+        <code>.text-left</code>
+        <p class="text-left myBackGroundColor2 mycolor2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis ducimus quam necessitatibus ipsum error porro odio ad autem inventore commodi.</p>
+        <code>.text-center</code>
+        <p class="text-center myBackGroundColor mycolor">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis ducimus quam necessitatibus ipsum error porro odio ad autem inventore commodi.</p>
+        <code>.text-right</code>
+        <p class="text-right myBackGroundColor2 mycolor2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis ducimus quam necessitatibus ipsum error porro odio ad autem inventore commodi.</p>
+        <code>.text-justify</code>
+        <p class="text-justify myBackGroundColor mycolor">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis ducimus quam necessitatibus ipsum error porro odio ad autem inventore commodi.</p>
+        <code>.text-nowrap</code>
+        <p class="text-nowrap myBackGroundColor2 mycolor2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis ducimus quam necessitatibus ipsum error porro odio ad autem inventore commodi.</p>
+    </div>
+            
+    <!-- float -->
+    <div class="float-left">Float left on all viewport sizes</div><br>
+    <div class="float-right">Float right on all viewport sizes</div><br>
+    <div class="float-none">Don't float on all viewport sizes</div>
+    
+    
+
+
+
+    <!-- 부트스트랩 JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

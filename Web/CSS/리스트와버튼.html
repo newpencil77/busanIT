@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .myList {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .myList li {
+            padding: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid black;
+
+        }
+
+        .myList2
+        {
+            list-style-image:url(sun.png) ;
+        }
+
+        /*  :first-child :last-child :nth-child()
+        똑같은 태그가 여러 개 있을 때 선택 가능 */
+
+        .myList li:first-child {
+            color: skyblue;
+        }
+
+        .myList li:last-child {
+            border-bottom: none;
+            margin-bottom: 50px;
+        }
+
+        .myList li:nth-child(2) {
+            color: blueviolet;
+        }
+
+        /* a 링크 css */
+
+        a {
+            display: inline-block;
+            color: black;
+            margin: 10px 20px;
+        }
+
+        a:hover
+        {
+            text-decoration: underline hotpink;
+            color: skyblue;
+            
+        }
+
+        a:visited
+        {
+            color: firebrick;
+        }
+
+
+        .alink1 {
+            color: green;
+            text-decoration: none;
+        }
+
+        .alink2 {
+
+            text-decoration: none;
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+        .alink3
+        {
+            text-decoration: none;
+            padding: 10px;
+            background-color: crimson;
+            color: white;
+        }
+
+        /*버튼 CSS*/
+
+        .btn
+        {
+            padding: 15px 30px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .red
+        {
+            background-color: red;
+            border: 1px solid red;
+            opacity: 1;
+            transition: 0.5s;
+        }
+        .red:hover
+        {
+            background-color: #fa9191;
+            opacity: 1;
+            transition: 0.5s;
+
+        }
+
+        .blue
+        {
+            background-color: blue;
+            border: 1px solid blue;
+        }
+
+        .blue:hover
+        {
+            background-color: #c3edea;
+            color: blue;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .green
+        {
+            background-color: green;
+            border: 1px solid green;
+        }
+
+        .green:hover
+        {
+            background-color: #649d66;
+        }
+
+        .box
+        {
+            display: inline-block;
+            box-shadow: 5px 5px 5px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <ul class="myList">
+        <li>순서 없는 목록의 아이템1</li>
+        <li>순서 없는 목록의 아이템2</li>
+        <li>순서 없는 목록의 아이템3</li>
+    </ul>
+
+    <ul class="myList2">
+        <li>순서 없는 목록의 아이템1</li>
+        <li>순서 없는 목록의 아이템2</li>
+        <li>순서 없는 목록의 아이템3</li>
+    </ul>
+
+
+    <ol class="myList">
+        <li>순서 있는 목록의 아이템1</li>
+        <li>순서 있는 목록의 아이템2</li>
+        <li>순서 있는 목록의 아이템3</li>
+    </ol>
+
+
+    <h3>링크</h3>
+    <a href="#">Text Link</a>
+    <a class="alink1" href="#">Text Link</a>
+    <a class="alink2" href="#">Text Button</a>
+    <a class="alink3" href="#">Text Button</a>
+
+    <h3>버튼</h3>
+    <button class="btn red">RED</button>
+    <button class="btn blue">BLUE</button>
+    <button class="btn green">GREEN</button>
+
+    <div class="box">
+        <p><code>box-shadow: 5px 5px 5px</code></p>
+    </div>
+
+</body>
+
+</html>

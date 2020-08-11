@@ -1,0 +1,1 @@
+print(['abc', 'def', 'ghi', 'jkl', 'mno'][-2][-2])

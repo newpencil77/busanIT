@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스모델</title>
+
+    <style>
+
+        .block
+        {
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+
+        }
+
+        .padding{ padding: 10px; }
+        .margin{ margin: 10px; }
+
+        .inline
+        {
+            /* 인라인은 높이 및 크기를 지정할 수 없음.
+            width: 200px;
+            height: 50px;  */
+
+            /* 보더 됨 */
+            border: 1px solid red;
+            /* 마진은 결과가 다소 이상하게 적용됨. 실제 보이는 것은 좌우만 적용? */
+            /* margin: 10px; */
+            /* 패딩의 경우도 다른 요소의 영역을 침범하게 되는 것 같음*/
+            padding: 10px; 
+
+        }
+
+        .inline-block
+        {
+            width: 200px;
+            height: 50px;
+            border: 1px solid blue;
+            display: inline-block;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <h3>박스 모델</h3>
+    
+    <!-- emmet 태그.클래스명 -->
+    <!-- 태그#아이디 -->
+    <!-- div는 자주 사용해서 .클래스 , #아이디 만 해도 자동완성됨 -->
+
+    <!-- 클래스를 여러개 할 땐 띄어쓰기 <div class="block block2">-->
+    <div class="block">블록</div>
+    <div class="block">블록</div>
+    <span class="inline">인라인</span>
+    <span class="inline">인라인</span>
+    <div class="inline-block">인라인블록</div>
+    <div class="inline-block">인라인블록</div>
+
+    <a href="">dddf</a>
+
+    <div>
+
+
+    </div>
+</body>
+</html>

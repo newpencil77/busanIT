@@ -1,0 +1,252 @@
+--테이블 만들기
+CREATE TABLE ex_date(
+ex_id      NUMBER(2),   --ex_id 라는 열, 데이터타입은 number(2개짜리)
+start_date DATE      DEFAULT sysdate -- start_date라는 열/ 데이터 타입은 날짜. 디폴트 값은 SYSDATE
+);
+
+DESC ex_date;
+
+INSERT INTO ex_date (ex_id)
+values (1);
+
+SELECT * FROM ex_date;
+
+--테이블 삭제
+--CASECADE CONSTRAINT : 테이블이 다른 테이블로부터 참조되는 경우, 해당 제약조건을 먼저 삭제.
+
+drop table comp;
+DROP TABLE ex_date;
+drop table xx_emp;
+
+
+
+--예제) product_id(number 타입), product_name(varchar2 타입, 20자리), menu_date(date 타입) 열이 있는 
+--sample_product 이름의 테이블을 생성해 보세요.
+
+CREATE TABLE  sample_product(
+product_id NUMBER,
+product_name VARCHAR2(20 BYTE),
+menu_date DATE);
+
+---예제) 위에서 만든 테이블을 삭제해 보세요. DESCRIBE 절로 테이블이 잘 삭제되었는지 확인하세요.
+
+DROP TABLE sample_product; 
+
+DESC sample_product;
+
+
+
+-----------------------------------------------
+--테이블의 제약조건
+CREATE TABLE emp(
+eno NUMBER(3) CONSTRAINT emp_eno_pk PRIMARY KEY,
+emp_name VARCHAR2(20)
+);
+1
+CREATE TABLE emp(
+eno NUMBER(3),
+emp_name VARCHAR2(20),
+CONSTRAINT emp_eno_pk PRIMARY KEY(eno) --eno를 primary key로 하겠다고 테이블 차원에서 정의
+);
+
+
+--NOT NULL/ UK (고유키 unique key)
+CREATE TABLE emp1(
+eno NUMBER(3),
+emp_name VARCHAR2(20) CONSTRAINT emp1_ename_nn NOT NULL, --not null은 아랫쪽에 쓸 수 없음
+email VARCHAR2(30), 
+CONSTRAINT emp1_email_uk UNIQUE(email)
+);
+
+--NOT NULL은 NULL 값이 입력될 수 없다.
+--유니크는 동일한 값이 입력될 수 없다.
+INSERT INTO emp1(eno, emp_name, email)
+VALUES          (1, '홍길동', 'hong@naver.com'); --이름에 NULL 불가.
+
+INSERT INTO emp1(eno, emp_name, email)
+VALUES          (1, '강감찬', 'kang@naver.com'); --이메일이 같을수 X
+
+SELECT *
+FROM emp1;
+
+
+
+
+--CHECK 제약조건. check 뒤에 조건이 들어감
+CREATE TABLE emp2(
+eno NUMBER(3),
+emp_name VARCHAR2(20) CONSTRAINT emp2_ename_nn NOT NULL,
+SAL NUMBER(10),
+CONSTRAINT emp2_sal_check CHECK(sal>1000) --sal열에 대한 체크 제약조건. sal에 입력되는 값은 1000보다 커야함
+);
+
+INSERT INTO emp2
+VALUES (1, 'kim', 100);--오류 보고 -ORA-02290: check constraint (HR.EMP2_SAL_CHECK) violated
+
+INSERT INTO emp2
+VALUES (1, 'kim', 1200);
+
+
+--제약조건의 이름 없이 테이블 생성 (CONSTRAINT와 뒤에 오는 이름이 생략 가능함. - 생략 시 자동생성됨)
+CREATE TABLE EMP(
+    eno NUMBER(4) PRIMARY KEY, --제약조건의 이름 생략
+    ename VARCHAR2(20) NOT NULL,
+    gno VARCHAR2(13) UNIQUE CHECK(LENGTH(gno)>=8), --unique와 check제약조건이 들어간 것.
+    gender VARCHAR2(5) CHECK(gender IN('woman','man'))      
+    );
+
+INSERT INTO emp
+VALUES (1, 'Kim', '12345678', 'man');
+
+INSERT INTO emp
+VALUES (2, 'Kang', '123456789', 'woman');
+
+INSERT INTO emp
+VALUES (3, 'Kang', '12345678910', 'man');
+
+DESC emp;
+
+
+--
+
+CREATE TABLE members(
+member_id NUMBER(2) CONSTRAINT mem_id_pk PRIMARY KEY,
+first_name VARCHAR2(50) CONSTRAINT mem_fname_nn NOT NULL,
+last_name VARCHAR2(50) CONSTRAINT mem_lname_nn NOT NULL,
+gender VARCHAR2(5) CONSTRAINT mem_lname_chk  CHECK(gender IN('Man', 'Woman')),
+birth_day DATE DEFAULT SYSDATE,
+email VARCHAR2(200) CONSTRAINT mem_email_un UNIQUE CONSTRAINT mem_email_nn NOT NULL
+);
+
+
+/*
+CREATE TABLE members(
+member_id NUMBER(2) CONSTRAINT mem_id_pk PRIMARY KEY,
+first_name VARCHAR2(50) CONSTRAINT mem_fname_nn NOT NULL,
+last_name VARCHAR2(50) CONSTRAINT mem_lname_nn NOT NULL,
+gender VARCHAR2(5) CONSTRAINT mem_lname_chk  CHECK(UPPER(gender) IN(UPPER('Man'), UPPER('Woman'))),
+birth_day DATE DEFAULT SYSDATE,
+email VARCHAR2(200) CONSTRAINT mem_email_un UNIQUE CONSTRAINT mem_email_nn NOT NULL
+);
+*/
+
+--체크를 한 다음, 일괄적으로 맞춰서 들어가게 할 순 없나?
+--예를 들어, WoMan을 해도 데이터베이스에 들어가긴 하되, 입력되긴 Woman으로 들어가도록 할 순 없나?
+
+--디폴트 값을 적용시키려면, INSERT할 때, 열들을 명시해줘야하나? --지금까지 보기론 그래보임. 
+--열 값을 생략해서 모든 열 값을 가진 데이터를 생성하려고 할 때, 일부 열의 데이터값을 임의로 뺄 수 가 없음.
+
+
+SELECT *
+FROM members;
+
+DROP TABLE members;
+
+INSERT INTO members 
+VALUES      (1, 'aa', 'aa', 'WoMan',TO_DATE('2000-02-02','YYYY-MM-DD') ,'ef@fd.com');
+
+INSERT INTO members (member_id, first_name, last_name, gender,email)
+VALUES      (1, 'aa', 'aa', 'Woman','ef@fd.com');
+
+DESC MEMBERS;
+
+SELECT *
+FROM MEMBERS;
+
+
+
+
+--------------------------------
+--기본키와 외래키 설정
+
+--테이블 생성, 기본키 설정
+CREATE TABLE dept(  --테이블 생성
+dno NUMBER(4),
+dname VARCHAR2(20),
+CONSTRAINT dept_dno_pk PRIMARY KEY(dno) --기본키 설정
+);
+
+INSERT INTO dept
+VALUES (1, 'first'); --dno에 1, dname에 'first'를 입력.
+
+INSERT INTO dept
+VALUES (1, 'first'); --기본키가 같기 때문에 에러가 남. NULL값을 넣어도 에러남. (기본키가 중복 or 널값->에러)
+
+SELECT * FROM dept; --테이블 내용 확인
+
+--테이블 생성, 외래키 설정
+CREATE TABLE emp(
+eno NUMBER(4),
+emp_name VARCHAR2(20),
+sal NUMBER(10),
+dno NUMBER(4),
+CONSTRAINT emp_eno_pk PRIMARY KEY(eno), --기본키
+CONSTRAINT emp_dno_fk FOREIGN KEY(dno) --외래키
+REFERENCES dept(dno) --외래키가 참조하는 테이블(열) 
+--ON DELETE CASCADE --참조되고 있는 값이 삭제시 참조행도 같이 삭제.
+ON DELETE SET NULL --참조되고 있는 값이 삭제시 참조행이 널 값으로 설정됨
+);
+
+----
+DELETE FROM dept; --테이블에 있는 모든 행 삭제
+
+INSERT INTO dept
+VALUES (10, 'TEST1');
+INSERT INTO dept
+VALUES (20, 'TEST2');
+INSERT INTO dept
+VALUES (30, 'TEST3');
+INSERT INTO dept
+VALUES (40, 'TEST4');
+INSERT INTO dept
+VALUES (50, 'TEST5');
+SELECT * FROM dept; --부서 테이블 확인
+
+INSERT INTO emp (eno, emp_name, sal, dno)
+VALUES (1010, 'Kim', 200, 10);
+INSERT INTO emp (eno, emp_name, sal, dno)
+VALUES (1020, 'Lee', 180, 20);
+INSERT INTO emp (eno, emp_name, sal, dno)
+VALUES (1030, 'Jung', 220, 30);
+INSERT INTO emp (eno, emp_name, sal, dno)
+VALUES (1040, 'Oh', 250, 40);
+INSERT INTO emp (eno, emp_name, sal, dno)
+VALUES (1050, 'Kang', 300, 50);
+SELECT * FROM emp; --직원 테이블 확인
+
+INSERT INTO emp (eno, emp_name, sal, dno)
+VALUES (1060, 'Wang', 300, 60); --에러. ORA-02291: integrity constraint (HR.EMP_DNO_FK) violated - parent key not found
+--dno는 외래키. 헌데 60번이 참조해온 테이블인 dept에 없음.
+INSERT INTO emp (eno, emp_name, sal, dno)
+VALUES (1060, 'Wang', 300, NULL); -- 널 값은 가능.
+
+
+
+--참조되고 있는 부서 테이블의 값을 삭제하는 경우(실제로 그 값을 참조하고 있는 테이블(행)이 없어야함)
+DELETE FROM dept
+WHERE dno = 10; --ORA-02292: integrity constraint (HR.EMP_DNO_FK) violated - child record found
+--다른 테이블이 참조하고 있기 때문에 오류가 나는 것.
+
+DELETE FROM emp  
+WHERE eno = 1010;
+DELETE FROM dept ----참조하고 있는 행이 없어지자 삭제 가능해짐.
+WHERE dno = 10;
+
+drop table emp;
+
+--이렇게 하면 번거로움. 그래서 외래키를 설정할 때 따로 설정을 덧붙여주기도 함. ON DELETE CASCADE / ON DELETE SET NULL
+--ON DELETE CASCADE 의 경우 (기본키로 갖고 있는 테이블에서) 해당 값 삭제 시, 외래키로 사용한(참조한) 행도 같이 삭제해버림
+--ON DELETE SET NULL의 외래키로 사용한(참조한) 행에 null 값이 입력됨.
+
+
+DELETE FROM dept ----참조하고 있는 행이 없어지자 삭제 가능해짐.
+WHERE dno = 30;
+
+
+SELECT *
+FROM ALL_CONSTRAINTS
+WHERE TABLE_NAME = 'DEPT';
+--교재 364p 참고.
+
+
+

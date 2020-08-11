@@ -1,0 +1,129 @@
+--그룹함수
+--MAX, MIN
+SELECT MAX(salary), MIN(salary)
+    FROM employees;
+--문자열에 적용    
+SELECT MAX(first_name), MIN(first_name) --A부터. A가 제일 작은 값 (소문자가 있으면?)
+    FROM employees;    
+--날짜에 적용
+SELECT MAX(hire_date), MIN(hire_date) --최근에 가까운 것이 큰 값임
+    FROM employees;
+
+--SUM, AVG
+SELECT SUM(salary), AVG(salary)
+FROM employees;
+
+--COUNT
+select COUNT(*)  --전체 행의 갯수를 카운트함.
+    FROM employees;
+
+SELECT COUNT(commission_pct) --null값을 제외한 행의 갯수
+    FROM employees;
+
+SELECT COUNT(DISTINCT department_id) --중복 제외. null값 제외.
+    FROM employees;    
+
+SELECT COUNT(NVL(commission_pct,0)) --NVL을 활용해 null값을 0으로 만들어 전부를 세도록 만듦.
+    FROM employees;
+
+SELECT COUNT(employee_id) --employee_id는 기본키임. null을 가진 경우가 없어서 전부나옴.
+    FROM employees
+WHERE department_id = 90; --조건에 만족하는 행의 갯수를 구할 수 있음
+--직접 카운트 안에 조건을 넣어봤는데 안 되더라.
+
+
+
+
+--그룹 만들기 GROUP BY
+SELECT department_id, SUM(salary) --에러남. 
+    FROM employees;
+
+SELECT department_id, SUM(salary)  
+FROM employees
+GROUP BY department_id; --부서별로 그룹을 만들고 SUM(salary)를 하고 있음.  
+--SELECT절에 있는 열들을 필수로 그룹화해야함. 하긴, 안 그러면 표가 안 만들어질 듯.
+
+SELECT department_id, job_id, SUM(salary), ROUND(AVG(salary)), COUNT(*)  
+FROM employees
+GROUP BY department_id , job_id
+ORDER BY COUNT(*)DESC; --그룹 함수로 생겨난 칼럼(열)도 정렬 가능함
+
+--예제1.  부서별 사원수, 최대급여, 최소급여, 급여합계, 평균급여를 급여합계 
+--큰순으로 조회
+SELECT
+department_id AS 부서명,
+count(*) AS 사원수,
+MAX(salary) AS 최고급여, MIN(salary) AS 최소급여, SUM(salary) AS 급여합계, ROUND(AVG(salary)) AS 평균급여
+    FROM employees
+GROUP BY department_id
+ORDER BY SUM(salary)DESC;
+
+--예제 2)  부서별, 직업별(job_id), 상사번호(manager_id)별로 그룹을 지어 salary 합계와 그룹별 직원의 숫자를 출력하라.
+SELECT
+department_id AS 부서번호, 
+job_id AS 직업, 
+manager_id AS 상사번호,
+SUM(salary) AS 월급합계, COUNT(*) AS 직원수
+    FROM employees
+GROUP BY department_id, job_id, manager_id;
+
+--예제 3) 부서별로 최고 월급을 뽑아서 평균을 내고, 최저월급 또한 평균을 내어 출력하라
+SELECT 
+ROUND(AVG(MAX(salary))) AS 부서별최고월급평균,
+AVG(MIN(salary)) AS 부서별최저월급형균
+    FROM employees
+GROUP BY department_id;
+
+
+
+
+--HAVING절
+--- WHERE 절에서는 집계함수를 사용 할 수 없다.
+-- HAVING 절은 집계함수를 가지고 조건비교를 할 때 사용한다.
+-- HAVING절은 GROUP BY절과 함께 사용이 된다
+
+SELECT department_id AS 부서번호, SUM(salary) AS 급여합계
+    FROM employees
+    --WHERE SUM(salary) > 100000 --WHERE절에선 그룹함수 사용 불가.
+GROUP BY department_id
+HAVING SUM(salary) > 100000 --HAVING절 사용. 그룹의 조건절
+ORDER BY department_id;
+
+SELECT department_id AS 부서번호, COUNT(*)
+    FROM employees
+GROUP BY department_id
+HAVING COUNT(*)>5; --5명이 넘는 department_id만 출력
+
+--예제 1) 아래 예제는 부서별 평균 월급이 $10000을 초과하는 직종에 대해서 job_id와  월급여 합계를 조회하는 예이다. 
+--단 어카운트 매니저( AC_MGR )은 제외하고 월 급여 합계로 내림차순 정렬하시오.
+SELECT
+job_id AS 직종,
+SUM(salary) AS 월급여합계
+    FROM employees
+WHERE job_id != 'AC_MGR'
+GROUP BY job_id
+HAVING AVG(salary) > 10000 --having절에선 별칭 사용이 안됐음.
+ORDER BY 월급여합계 DESC; --ORDER BY에선 별칭 사용이 됨.
+
+
+--예제 2) 부서번호 40을 제외한 부서별 평균 급여가 7000 이하인 부서들의 평균 급여를 출력
+SELECT
+department_id AS 부서번호,
+ROUND(AVG(salary)) AS 평균급여
+    FROM employees
+WHERE department_id != 40
+GROUP BY department_id
+HAVING ROUND(AVG(salary))<= 7000; 
+
+
+--예제 3) 직종별로 월급(salary)의 합계가 13000 이상인 직종을 출력하라. 
+--급여총액으로 내림차순으로 정렬하고, 직종(job_id)에 'REP' 들어있는 직종은 제외한다.
+SELECT
+job_id,
+SUM(salary) AS 급여총액
+    FROM employees
+    WHERE job_id NOT LIKE '%REP%'
+GROUP BY job_id
+HAVING SUM(salary) >= 13000 
+ORDER BY 급여총액 DESC;
+    

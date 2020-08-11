@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 예제</title>
+
+    <style>
+
+        .aa
+        {
+            width: 80%;
+            margin: auto;
+        }
+
+        /* .title 
+        {
+            background-color: skyblue;
+            color: white;
+            text-align: left;
+        
+        } */
+
+        th, td  
+        {
+            padding: 10px;
+        }
+
+        tr:nth-child(even)
+        {
+            background-color: lightcyan;
+        }
+
+        tr:hover
+        {
+            background-color: slateblue;
+            color: white;
+        }
+        
+        tr:first-child
+        {
+            background-color: skyblue;
+            color: white;
+            text-align: left;
+        }
+
+        .pagination
+        {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pagination a
+        {
+            padding: 8px 16px;
+            text-decoration: none;
+            color: cornflowerblue;
+            /* border: 1px solid #ddd; */
+        }
+
+        .pagination:hover
+        {
+            background-color: white;
+        }
+
+        .pagination a:first-child
+        {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .pagination a:first-child
+        {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .pagination a:hover
+        {
+            background-color: lightgrey;
+        }
+
+
+
+
+
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <table class="aa">
+        <tr class="title">
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+            <th>조회수</th>
+        </tr>
+        <tr>
+            <td>99</td>
+            <td>누가 CSS 공부한다면서요?</td>
+            <td>홍길동</td>
+            <td>2020.03.05</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>꺼진 불 확인</td>
+            <td>김유신</td>
+            <td>2020.03.05</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>배고파</td>
+            <td>걸신</td>
+            <td>2020.03.05</td>
+            <td>7</td>
+        </tr>
+    </table>
+
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+
+</body>
+
+</html>

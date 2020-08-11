@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백그라운드 연습용</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        position: relative;
+    }
+
+    /* .first {
+        margin-top: 0px;
+    } */
+
+    /* .vac {
+        margin: 100px;
+        position: relative;
+        z-index: 2;
+    } */
+
+    .container {
+        height: 100vh;
+        /* viewport height */
+        /* background: url(서핑.jpg) no-repeat center center; */
+        background-image :  url(sun.png), url(서핑.jpg) ;
+        background-repeat: no-repeat, no-repeat;
+        background-position: right top, center;
+         
+        /* cover를 하면 전체화면에 맞게 들어감 */
+        background-size: 100px 100px, cover;
+
+        color: white;
+        text-align: center;
+
+    }
+
+    .inbox 
+    {        
+        height: 100vh;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+
+    }
+
+    .container2 {
+        height: 100vh;
+        /* viewport height */
+        background: url(배경2.jpg) no-repeat center center;
+        /* cover를 하면 전체화면에 맞게 들어감 */
+
+        /*  -webkit- : 구글, 사파리 브라우저에 적용
+            -moz- : 파이어폭스 브라우저에 적용
+            -ms- : 익스플로러에 적용, 보통 생략합니다.
+            -o- : 오페라 브라우저에 적용 */
+        background-size: cover;
+        /* overflow: hidden; */
+    }
+
+    .container3 {
+        height: 100vh;
+        background: linear-gradient(45deg, #ff0000, blue);
+        /* background: linear-gradient(to right, red, blue, yellow, orange); */
+    }
+</style>
+
+
+<body>
+
+    <div class="container"></div>
+
+            <div class="inbox">
+                <h1 class="first">배경에 글자를 넣어봅니다</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro temporibus aliquid delectus illum quam
+                    totam sit nobis aspernatur harum amet?</p>
+                <h1>테스트 중입니다</h1>
+                <p>라인 간격 조절?</p>
+            </div>
+            
+    <div class="container2"></div>
+    <div class="container3"></div>
+
+</body>
+
+</html>
